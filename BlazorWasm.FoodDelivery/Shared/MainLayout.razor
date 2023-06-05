@@ -1,17 +1,169 @@
 ﻿@inherits LayoutComponentBase
-
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+<div>
+<header class="header header__shrink">
+    <div class="container">
+        <div class="nav__wrapper d-flex align-items-center justify-content-between">
+            <div class="logo">
+                <img src="assets/img/favicon.png" alt="logo">
+                <h5>Tasty Treat</h5>
+            </div>
+            <div class="navigation">
+                <div class="menu d-flex align-items-center gap-5">
+                    <a class="active__menu"
+                       href="https://food-delivery-ecommerce-app.netlify.app/home"
+                       aria-current="page">
+                        Home
+                    </a>
+                    <a class=""
+                       href="https://food-delivery-ecommerce-app.netlify.app/foods">
+                        Foods
+                    </a>
+                    <a class=""
+                       href="https://food-delivery-ecommerce-app.netlify.app/cart">
+                        Cart
+                    </a>
+                    <a class=""
+                       href="https://food-delivery-ecommerce-app.netlify.app/contact">
+                        Contact
+                    </a>
+                </div>
+            </div>
+            <div class="nav__right d-flex align-items-center gap-4">
+                <span class="cart__icon">
+                    <i
+                        class="ri-shopping-basket-line">
+                    </i><span class="cart__badge">0</span>
+                </span>
+                <span
+                    class="user">
+                    <a href="https://food-delivery-ecommerce-app.netlify.app/login">
+                        <i
+                            class="ri-user-line">
+                        </i>
+                    </a>
+                </span>
+                <span class="mobile__menu">
+                    <i
+                        class="ri-menu-line">
+                    </i>
+                </span>
+            </div>
         </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+    </div>
+</header>
+</div>
+<div class="w-100">
+    @Body
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class=" footer__logo text-start">
+                        <img
+                            src="assets/img/favicon.png" alt="logo">
+                        <h5>Tasty Treat</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt pariatur accusamus
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <h5 class="footer__title">Delivery Time</h5>
+                    <ul class="deliver__time-list list-group">
+                        <li class=" delivery__time-item border-0 ps-0 list-group-item">
+                            <span>
+                                Sunday -
+                                Thursday
+                            </span>
+                            <p>10:00am - 11:00pm</p>
+                        </li>
+                        <li class=" delivery__time-item border-0 ps-0 list-group-item">
+                            <span>
+                                Friday -
+                                Saturday
+                            </span>
+                            <p>Off day</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <h5 class="footer__title">Contact</h5>
+                    <ul class="deliver__time-list list-group">
+                        <li class=" delivery__time-item border-0 ps-0 list-group-item">
+                            <p>Location: ZindaBazar, Sylhet-3100, Bangladesh</p>
+                        </li>
+                        <li class=" delivery__time-item border-0 ps-0 list-group-item">
+                            <span>
+                                Phone:
+                                01712345678
+                            </span>
+                        </li>
+                        <li class=" delivery__time-item border-0 ps-0 list-group-item">
+                            <span>
+                                Email:
+                                example@gmail.com
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <h5 class="footer__title">Newsletter</h5>
+                    <p>Subscribe our newsletter</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter your email">
+                        <span>
+                            <i
+                                class="ri-send-plane-line">
+                            </i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 row">
+                <div class="col-md-6 col-lg-6">
+                    <p class="copyright__text">
+                        Copyright - 2022, website made by Muhibur Rahman. All Rights
+                        Reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="social__links d-flex align-items-center gap-4 justify-content-end">
+                        <p class="m-0">Follow: </p>
+                        <span>
+                            <a
+                                href="https://food-delivery-ecommerce-app.netlify.app/https://www.facebook.com/muhib160">
+                                <i
+                                    class="ri-facebook-line">
+                                </i>
+                            </a>
+                        </span>
+                        <span>
+                            <a
+                                href="https://food-delivery-ecommerce-app.netlify.app/https://github.com/muhib160">
+                                <i
+                                    class="ri-github-line">
+                                </i>
+                            </a>
+                        </span>
+                        <span>
+                            <a
+                                href="https://food-delivery-ecommerce-app.netlify.app/%20https://www.youtube.com/c/MuhibsTechDiary">
+                                <i
+                                    class="ri-youtube-line">
+                                </i>
+                            </a>
+                        </span>
+                        <span>
+                            <a
+                                href="https://food-delivery-ecommerce-app.netlify.app/%20https://www.linkedin.com/in/muhib160/">
+                                <i
+                                    class="ri-linkedin-line">
+                                </i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
