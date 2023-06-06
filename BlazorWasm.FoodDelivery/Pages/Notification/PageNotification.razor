@@ -1,0 +1,19 @@
+﻿@implements IDisposable
+@inject NotificationStateContainer StateContainer
+
+<span class="cart__icon">
+    <i class="ri-shopping-basket-line">
+    </i><span class="cart__badge">@StateContainer.Property</span>
+</span>
+
+@code {
+    protected override void OnInitialized()
+    {
+        StateContainer.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        StateContainer.OnChange -= StateHasChanged;
+    }
+}

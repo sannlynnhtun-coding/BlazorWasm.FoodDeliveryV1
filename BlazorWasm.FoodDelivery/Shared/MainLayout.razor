@@ -1,5 +1,8 @@
 ﻿@inherits LayoutComponentBase
-<div>
+<div style="
+     position: -webkit-sticky;
+     position: sticky;
+     top: 0;">
 <header class="header header__shrink">
     <div class="container">
         <div class="nav__wrapper d-flex align-items-center justify-content-between">
@@ -29,11 +32,7 @@
                 </div>
             </div>
             <div class="nav__right d-flex align-items-center gap-4">
-                <span class="cart__icon">
-                    <i
-                        class="ri-shopping-basket-line">
-                    </i><span class="cart__badge">0</span>
-                </span>
+                <PageNotification/>
                 <span
                     class="user">
                     <a href="https://food-delivery-ecommerce-app.netlify.app/login">
