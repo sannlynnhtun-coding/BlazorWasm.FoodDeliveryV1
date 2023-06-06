@@ -1,5 +1,6 @@
 ﻿@using System.Net.Http
 @using System.Net.Http.Json
+@using BlazorWasm.FoodDelivery.Services
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components.Web
@@ -8,3 +9,6 @@
 @using Microsoft.JSInterop
 @using BlazorWasm.FoodDelivery
 @using BlazorWasm.FoodDelivery.Shared
+@using BlazorWasm.FoodDelivery.Models
+@using BlazorWasm.FoodDelivery.Pages.PopularFood
+@inject FoodService _FoodService
