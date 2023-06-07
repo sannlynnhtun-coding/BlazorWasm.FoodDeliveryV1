@@ -1,56 +1,54 @@
 ﻿@inherits LayoutComponentBase
-<div style="
-     position: -webkit-sticky;
-     position: sticky;
-     top: 0;">
-<header class="header header__shrink">
-    <div class="container">
-        <div class="nav__wrapper d-flex align-items-center justify-content-between">
-            <div class="logo">
-                <img src="assets/img/favicon.png" alt="logo">
-                <h5>Tasty Treat</h5>
-            </div>
-            <div class="navigation">
-                <div class="menu d-flex align-items-center gap-5">
-                    <a class="active__menu"
-                       href="https://food-delivery-ecommerce-app.netlify.app/home"
-                       aria-current="page">
-                        Home
-                    </a>
-                    <a class=""
-                       href="https://food-delivery-ecommerce-app.netlify.app/foods">
-                        Foods
-                    </a>
-                    <a class=""
-                       href="https://food-delivery-ecommerce-app.netlify.app/cart">
-                        Cart
-                    </a>
-                    <a class=""
-                       href="https://food-delivery-ecommerce-app.netlify.app/contact">
-                        Contact
-                    </a>
+<div style=" position: -webkit-sticky; position: sticky; top: 0;">
+    <header class="header header__shrink">
+        <div class="container">
+            <div class="nav__wrapper d-flex align-items-center justify-content-between">
+                <div class="logo">
+                    <img src="assets/img/favicon.png" alt="logo">
+                    <h5>Tasty Treat</h5>
+                </div>
+                <div class="navigation">
+                    <div class="menu d-flex align-items-center gap-5">
+                        <a class="active__menu"
+                           href="https://food-delivery-ecommerce-app.netlify.app/home"
+                           aria-current="page">
+                            Home
+                        </a>
+                        <a class=""
+                           href="https://food-delivery-ecommerce-app.netlify.app/foods">
+                            Foods
+                        </a>
+                        <a class=""
+                           href="https://food-delivery-ecommerce-app.netlify.app/cart">
+                            Cart
+                        </a>
+                        <a class=""
+                           href="https://food-delivery-ecommerce-app.netlify.app/contact">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="nav__right d-flex align-items-center gap-4">
+                    <PageNotification/>
+                    <span
+                        class="user">
+                        <a href="https://food-delivery-ecommerce-app.netlify.app/login">
+                            <i
+                                class="ri-user-line">
+                            </i>
+                        </a>
+                    </span>
+                    <span class="mobile__menu">
+                        <i
+                            class="ri-menu-line">
+                        </i>
+                    </span>
                 </div>
             </div>
-            <div class="nav__right d-flex align-items-center gap-4">
-                <PageNotification/>
-                <span
-                    class="user">
-                    <a href="https://food-delivery-ecommerce-app.netlify.app/login">
-                        <i
-                            class="ri-user-line">
-                        </i>
-                    </a>
-                </span>
-                <span class="mobile__menu">
-                    <i
-                        class="ri-menu-line">
-                    </i>
-                </span>
-            </div>
         </div>
-    </div>
-</header>
+    </header>
 </div>
+<PageVoucher/>
 <div class="w-100">
     @Body
     <footer class="footer">
@@ -166,3 +164,6 @@
         </div>
     </footer>
 </div>
+<MudThemeProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>

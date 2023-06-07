@@ -10,6 +10,10 @@
 @using BlazorWasm.FoodDelivery
 @using BlazorWasm.FoodDelivery.Shared
 @using BlazorWasm.FoodDelivery.Models
+@using MudBlazor
 @using BlazorWasm.FoodDelivery.Pages.PopularFood
 @using BlazorWasm.FoodDelivery.Pages.Notification
+@using BlazorWasm.FoodDelivery.Pages.Voucher
 @inject FoodService _FoodService
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorageService
+@inject IDbService DbService

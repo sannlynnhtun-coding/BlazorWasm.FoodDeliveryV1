@@ -8,11 +8,11 @@
             </div>
             <div class="col-lg-12">
                 <div class="food__category d-flex align-items-center justify-content-center gap-4">
-                    <button type="button" class="all__btn  @(category_id == 0 ? "foodBtnActive":"") " @onclick="()=> FindFoodByCategory()">All</button>
+                    <button type="button" class="all__btn  @(_categoryId == 0 ? "foodBtnActive" : "") " @onclick="() => FindFoodByCategory()">All</button>
                     @foreach (var item in FoodCategoryList)
                     {
                         string imagePath = $"assets/img/food-category/{item.category_id}.png";
-                        <button type="button" class="d-flex align-items-center gap-2 @(category_id == item.category_id ? "foodBtnActive":"") " @onclick="()=> FindFoodByCategory(item.category_id)">
+                        <button type="button" class="d-flex align-items-center gap-2 @(_categoryId == item.category_id ? "foodBtnActive" : "") " @onclick="() => FindFoodByCategory(item.category_id)">
                             <img src="@(imagePath)"
                                  alt="">@item.category_name
                         </button>
@@ -22,7 +22,9 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-3">
                 <div class="search__widget d-flex align-items-center justify-content-between ">
                     <input type="text" placeholder="I'm looking for...." @onchange="Search">
-                    <span><i class="ri-search-line"></i></span>
+                    <span>
+                        <i class="ri-search-line"></i>
+                    </span>
                 </div>
             </div>
             @if (foodPagination != null)
@@ -33,7 +35,7 @@
                     string img = $"assets/img/food/{item.food_id}.jpg";
                     decimal price = item.food_price;
                     string display = (string.IsNullOrEmpty(name.Trim()) ||
-                                     name.ToLower().Contains(keyword.ToLower())) ? "" : "display : none;";
+                                      name.ToLower().Contains(_keyword.ToLower())) ? "" : "display : none;";
                     <div class="mt-5 col-6 col-sm-6 col-md-4 col-lg-3" style="@display">
                         <div class="product__item">
                             <div class="product__img">
@@ -50,7 +52,7 @@
                                     <span class="product__price">
                                         $@price
                                     </span>
-                                    <button type="button" class="addTOCart__btn" @onclick="()=>AddToCard(item)">
+                                    <button type="button" class="addTOCart__btn" @onclick="() => AddToCard(item)">
                                         Add
                                         to Cart
                                     </button>
@@ -59,17 +61,25 @@
                         </div>
                     </div>
                 }
+                if (_categoryId == 0)
+                {
+                    <div class="text-center">
+                        <MudPagination SelectedChanged="PageChanged" ShowFirstButton="true" ShowLastButton="true" Count="foodPagination.TotalPageNo" Class="mt-4"/>
+                    </div>
+                }
             }
         </div>
     </div>
 </section>
+
 @code {
     private List<FoodCategoryModel> FoodCategoryList { get; set; } = new();
     private List<FoodModel> FoodList { get; set; } = new();
     private FoodPaginationResponseModel foodPagination;
-    private int category_id = 0;
-    private int count = 0;
-    private string keyword = "";
+    private int _categoryId = 0;
+    private int _count = 0;
+    private string _keyword = "";
+
     protected override void OnInitialized()
     {
         FoodCategoryList = _FoodService.FoodCategoryList;
@@ -78,19 +88,35 @@
 
     void FindFoodByCategory(int categoryId = 0)
     {
-        category_id = categoryId;
+        _categoryId = categoryId;
         foodPagination = _FoodService.GetFoods(categoryId);
         StateHasChanged();
     }
 
-    void AddToCard(FoodModel item)
+    async Task AddToCard(FoodModel item)
     {
-        count++;
-        StateContainer.Property = count.ToString();
+        _count++;
+        StateContainer.Property = _count.ToString();
+        FoodSaleDataModel model = new()
+        {
+            SaleId = Guid.NewGuid(),
+            FoodName = item.food_name,
+            FoodPrice = item.food_price,
+            img = $"assets/img/food/{item.food_id}.jpg",
+            Qty = 1
+        };
+        await DbService.SetFoods(model);
+        model = new();
     }
 
     void Search(ChangeEventArgs e)
     {
-        keyword = e.Value.ToString();
+        _keyword = e.Value.ToString();
     }
+
+    void PageChanged(int pageNo)
+    {
+        foodPagination = _FoodService.GetFoods(_categoryId = 0, pageNo, 8);
+    }
+
 }

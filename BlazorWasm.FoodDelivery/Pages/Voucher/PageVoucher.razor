@@ -1,0 +1,77 @@
+@implements IDisposable
+@inject VoucherStateContainer VoucherStateContainer 
+
+@if (VoucherStateContainer.Property == CartEnum.Enable.ToString())
+{
+    <div class="cart__container">
+        <ul class="cart list-group">
+            <div class="cart__close">
+                <span>
+                    <i class="ri-close-fill" @onclick="Close"></i>
+                </span>
+            </div>
+            <div class="cart__item-list">
+                <li class="border-0 cart__item list-group-item">
+                    <div class="cart__item-info d-flex gap-2">
+                        <img
+                            src="./Food ordering app -Order_files/product_01.6be97a61.jpg" alt="product-img">
+                        <div
+                            class="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
+                            <div>
+                                <h6 class="cart__product-title">Chicken Burger</h6>
+                                <p class=" d-flex align-items-center gap-5 cart__product-price">
+                                    7x
+                                    <span>$168</span>
+                                </p>
+                                <div
+                                    class=" d-flex align-items-center justify-content-between increase__decrease-btn">
+                                    <span class="increase__btn">
+                                        <i class="ri-add-line"></i>
+                                    </span>
+                                    <span
+                                        class="quantity">
+                                        7
+                                    </span>
+                                    <span class="decrease__btn">
+                                        <i
+                                            class="ri-subtract-line">
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="delete__btn">
+                                <i class="ri-close-line"></i>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </div>
+            <div class="cart__bottom d-flex align-items-center justify-content-between">
+                <h6>Subtotal : <span>$618</span></h6>
+                <button>
+                    <a
+                        href="https://food-delivery-ecommerce-app.netlify.app/checkout">
+                        Checkout
+                    </a>
+                </button>
+            </div>
+        </ul>
+    </div>
+}
+
+@code {
+    protected override void OnInitialized()
+    {
+        VoucherStateContainer.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        VoucherStateContainer.OnChange -= StateHasChanged;
+    }
+
+    void Close()
+    {
+        VoucherStateContainer.Property = CartEnum.Display.ToString();
+    }
+}

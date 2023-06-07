@@ -6,16 +6,17 @@ namespace BlazorWasm.FoodDelivery.Services
 {
     public class FoodService
     {
-        public List<FoodModel> FoodList => Get<FoodModel>(JsonData.Food); 
+        public List<FoodModel> FoodList => Get<FoodModel>(JsonData.Food);
 
         public List<FoodCategoryModel> FoodCategoryList => Get<FoodCategoryModel>(JsonData.FoodCategory);
 
-        public FoodPaginationResponseModel GetFoods(int category_id = 0 , int pageNo = 1, int pageSize = 8)
+        public FoodPaginationResponseModel GetFoods(int category_id = 0, int pageNo = 1, int pageSize = 8)
         {
             int count = 0;
             int totalPageNo = 0;
             List<FoodModel> lst = new();
-            if (category_id == 0) {
+            if (category_id == 0)
+            {
                 count = FoodList.Count();
                 lst = FoodList.Skip((pageNo - 1) * pageSize).Take(pageSize).ToList();
             }
@@ -28,7 +29,8 @@ namespace BlazorWasm.FoodDelivery.Services
                     .Take(pageSize)
                     .ToList();
             }
-             totalPageNo = count / pageSize;
+
+            totalPageNo = count / pageSize;
             if (count % pageSize > 0)
                 totalPageNo++;
             return new FoodPaginationResponseModel
@@ -37,9 +39,10 @@ namespace BlazorWasm.FoodDelivery.Services
                 TotalPageNo = totalPageNo
             };
         }
+
         public List<T> Get<T>(string jsonStr)
         {
-            return JsonConvert.DeserializeObject<List<T>>(jsonStr); 
+            return JsonConvert.DeserializeObject<List<T>>(jsonStr);
         }
     }
 
