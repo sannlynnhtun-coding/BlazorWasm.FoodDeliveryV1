@@ -1,8 +1,12 @@
 @implements IDisposable
 @inject VoucherStateContainer VoucherStateContainer 
 
-@if (VoucherStateContainer.Property == EnumCartType.Enable)
+@if (VoucherStateContainer.Property == EnumCartType.Enable && VoucherStateContainer.FoodLst != null &&
+VoucherStateContainer.FoodLst.Count > 0)
 {
+    {
+        LstFood = VoucherStateContainer.FoodLst;
+    }
     <div class="cart__container">
         <ul class="cart list-group">
             <div class="cart__close">
@@ -22,19 +26,16 @@
                                 <div>
                                     <h6 class="cart__product-title">@item.FoodName</h6>
                                     <p class=" d-flex align-items-center gap-5 cart__product-price">
-                                        @(item.Qty)x
-                                        <span>@(item.FoodPrice * item.Qty)</span>
+                                        <span>@(item.FoodPrice * item.Qty)$</span>
                                     </p>
                                     <div
                                         class=" d-flex align-items-center justify-content-between increase__decrease-btn">
                                         <span class="decrease__btn">
-                                            <i
-                                                class="ri-subtract-line">
-                                            </i>
+                                            <i class="ri-subtract-line" @onclick="()=> "></i>
                                         </span>
                                         <span
                                             class="quantity">
-                                            7
+                                            @item.Qty
                                         </span>
                                         <span class="increase__btn">
                                             <i class="ri-add-line"></i>
@@ -50,7 +51,7 @@
                 }
             </div>
             <div class="cart__bottom d-flex align-items-center justify-content-between">
-                <h6>Subtotal : <span>$ 0</span></h6>
+                <h6>Subtotal : <span>$@(LstFood.Select((x=>x.FoodPrice)).Sum())</span></h6>
                 <button>
                     <a
                         href="https://food-delivery-ecommerce-app.netlify.app/checkout">
@@ -67,8 +68,8 @@
 
     protected override async Task OnInitializedAsync()
     {
-        VoucherStateContainer.OnChange += StateHasChanged;
         LstFood = await DbService.GetFoodsList();
+        VoucherStateContainer.OnChange += StateHasChanged;
     }
 
     public void Dispose()
@@ -76,8 +77,9 @@
         VoucherStateContainer.OnChange -= StateHasChanged;
     }
 
-    void Close()
+    async Task Close()
     {
+        LstFood = await DbService.GetFoodsList();
         VoucherStateContainer.Property = EnumCartType.Disable;
     }
 }
