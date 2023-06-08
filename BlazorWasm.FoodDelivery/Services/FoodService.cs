@@ -10,21 +10,21 @@ namespace BlazorWasm.FoodDelivery.Services
 
         public List<FoodCategoryModel> FoodCategoryList => Get<FoodCategoryModel>(JsonData.FoodCategory);
 
-        public FoodPaginationResponseModel GetFoods(int category_id = 0, int pageNo = 1, int pageSize = 8)
+        public FoodPaginationResponseModel? GetFoods(int CategoryId = 0, int pageNo = 1, int pageSize = 8)
         {
             int count = 0;
             int totalPageNo = 0;
             List<FoodModel> lst = new();
-            if (category_id == 0)
+            if (CategoryId == 0)
             {
                 count = FoodList.Count();
                 lst = FoodList.Skip((pageNo - 1) * pageSize).Take(pageSize).ToList();
             }
             else
             {
-                count = FoodList.Where(x => x.food_category == category_id).Count();
+                count = FoodList.Where(x => x.FoodCategory == CategoryId).Count();
                 lst = FoodList
-                    .Where(x => x.food_category == category_id)
+                    .Where(x => x.FoodCategory == CategoryId)
                     .Skip((pageNo - 1) * pageSize)
                     .Take(pageSize)
                     .ToList();
@@ -50,93 +50,93 @@ namespace BlazorWasm.FoodDelivery.Services
     {
         public static string Food { get; } = @" [
         {
-          ""food_id"": 1,
-          ""food_name"": ""Chicken Burger"",
-          ""food_price"": 24,
-          ""food_category"": 1
+          ""FoodId"": 1,
+          ""FoodName"": ""Chicken Burger"",
+          ""FoodPrice"": 24,
+          ""FoodCategory"": 1
         },
         {
-          ""food_id"": 2,
-          ""food_name"": ""Cheese Burger"",
-          ""food_price"": 24,
-          ""food_category"": 1
+          ""FoodId"": 2,
+          ""FoodName"": ""Cheese Burger"",
+          ""FoodPrice"": 24,
+          ""FoodCategory"": 1
         },
         {
-          ""food_id"": 3,
-          ""food_name"": ""Royal Cheese Burger"",
-          ""food_price"": 24,
-          ""food_category"": 1
+          ""FoodId"": 3,
+          ""FoodName"": ""Royal Cheese Burger"",
+          ""FoodPrice"": 24,
+          ""FoodCategory"": 1
         },
         {
-          ""food_id"": 4,
-          ""food_name"": ""Classic Hamburger"",
-          ""food_price"": 24,
-          ""food_category"": 1
+          ""FoodId"": 4,
+          ""FoodName"": ""Classic Hamburger"",
+          ""FoodPrice"": 24,
+          ""FoodCategory"": 1
         },
         {
-          ""food_id"": 5,
-          ""food_name"": ""Vegetarian Pizza"",
-          ""food_price"": 115,
-          ""food_category"": 2
+          ""FoodId"": 5,
+          ""FoodName"": ""Vegetarian Pizza"",
+          ""FoodPrice"": 115,
+          ""FoodCategory"": 2
         },
         {
-          ""food_id"": 6,
-          ""food_name"": ""Double Cheese Margherita"",
-          ""food_price"": 110,
-          ""food_category"": 2
+          ""FoodId"": 6,
+          ""FoodName"": ""Double Cheese Margherita"",
+          ""FoodPrice"": 110,
+          ""FoodCategory"": 2
         },
         {
-          ""food_id"": 7,
-          ""food_name"": ""Maxican Green Wave"",
-          ""food_price"": 110,
-          ""food_category"": 2
+          ""FoodId"": 7,
+          ""FoodName"": ""Maxican Green Wave"",
+          ""FoodPrice"": 110,
+          ""FoodCategory"": 2
         },{
-          ""food_id"": 8,
-          ""food_name"": ""Seafood Pizza"",
-          ""food_price"": 115,
-          ""food_category"": 2
+          ""FoodId"": 8,
+          ""FoodName"": ""Seafood Pizza"",
+          ""FoodPrice"": 115,
+          ""FoodCategory"": 2
         },{
-          ""food_id"": 9,
-          ""food_name"": ""Thin Cheese Pizza"",
-          ""food_price"": 110,
-          ""food_category"": 2
+          ""FoodId"": 9,
+          ""FoodName"": ""Thin Cheese Pizza"",
+          ""FoodPrice"": 110,
+          ""FoodCategory"": 2
         },{
-          ""food_id"": 10,
-          ""food_name"": ""Pizza With Mushroom"",
-          ""food_price"": 110,
-          ""food_category"": 2
+          ""FoodId"": 10,
+          ""FoodName"": ""Pizza With Mushroom"",
+          ""FoodPrice"": 110,
+          ""FoodCategory"": 2
         },{
-          ""food_id"": 11,
-          ""food_name"": ""Crunchy Bread"",
-          ""food_price"": 35,
-          ""food_category"": 3
+          ""FoodId"": 11,
+          ""FoodName"": ""Crunchy Bread"",
+          ""FoodPrice"": 35,
+          ""FoodCategory"": 3
         },
         {
-          ""food_id"": 12,
-          ""food_name"": ""Delicious Bread"",
-          ""food_price"": 35,
-          ""food_category"": 3
+          ""FoodId"": 12,
+          ""FoodName"": ""Delicious Bread"",
+          ""FoodPrice"": 35,
+          ""FoodCategory"": 3
         },
         {
-          ""food_id"": 13,
-          ""food_name"": ""Loaf Bread"",
-          ""food_price"": 35,
-          ""food_category"": 3
+          ""FoodId"": 13,
+          ""FoodName"": ""Loaf Bread"",
+          ""FoodPrice"": 35,
+          ""FoodCategory"": 3
         }
         ]";
 
         public static string FoodCategory { get; } = @"[
         {
-            ""category_id"": 1,
-            ""category_name"": ""Burger""
+            ""CategoryId"": 1,
+            ""CategoryName"": ""Burger""
         },
         {
-            ""category_id"": 2,
-            ""category_name"": ""Pizzia""
+            ""CategoryId"": 2,
+            ""CategoryName"": ""Pizzia""
         },
         {
-            ""category_id"": 3,
-            ""category_name"": ""Bread""
+            ""CategoryId"": 3,
+            ""CategoryName"": ""Bread""
         }
         ]";
     }

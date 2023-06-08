@@ -24,10 +24,20 @@ public class LocalStorageService : IDbService
     {
         var lst = await GetFoodsList();
         lst ??= new();
-        if (lst != null && lst.Count() > 0)
+        if (lst == null || lst.Count == 0)
         {
-            var exit = lst.FirstOrDefault(x => x.FoodName == item.FoodName);
-            if (exit != null)
+            lst.Add(item);
+            await _localStorageService.SetItemAsync("FoodSale", lst);
+        }
+        else
+        {
+            var existFood = lst.FirstOrDefault(x => x.FoodName == item.FoodName);
+            if (existFood == null)
+            {
+                lst.Add(item);
+                await _localStorageService.SetItemAsync("FoodSale", lst);
+            }
+            else
             {
                 var commonItem = lst
                     .FirstOrDefault(x => x.FoodName == item.FoodName);
@@ -36,16 +46,6 @@ public class LocalStorageService : IDbService
                 lst[index] = commonItem;
                 await _localStorageService.SetItemAsync("FoodSale", lst);
             }
-            else
-            {
-                lst.Add(item);
-                await _localStorageService.SetItemAsync("FoodSale", lst);
-            }
-        }
-        else
-        {
-            lst.Add(item);
-            await _localStorageService.SetItemAsync("FoodSale", lst);
         }
     }
 }

@@ -1,12 +1,14 @@
+using BlazorWasm.FoodDelivery.Models;
+
 namespace BlazorWasm.FoodDelivery.Services;
 
 public class VoucherStateContainer
 {
-    private string? savedString;
+    private EnumCartType? savedString;
 
-    public string Property
+    public EnumCartType Property
     {
-        get => savedString ?? "0";
+        get => savedString ?? EnumCartType.Disable;
         set
         {
             savedString = value;
