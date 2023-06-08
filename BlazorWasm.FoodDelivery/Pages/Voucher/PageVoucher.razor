@@ -1,7 +1,7 @@
 @implements IDisposable
 @inject VoucherStateContainer VoucherStateContainer 
 
-@if (VoucherStateContainer.Property == CartEnum.Enable.ToString())
+@if (VoucherStateContainer.Property == EnumCartType.Enable)
 {
     <div class="cart__container">
         <ul class="cart list-group">
@@ -16,7 +16,7 @@
                     <li class="border-0 cart__item list-group-item">
                         <div class="cart__item-info d-flex gap-2">
                             <img
-                                src="./Food ordering app -Order_files/product_01.6be97a61.jpg" alt="product-img">
+                                src="@item.FoodPhoto" alt="product-img">
                             <div
                                 class="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
                                 <div>
@@ -50,7 +50,7 @@
                 }
             </div>
             <div class="cart__bottom d-flex align-items-center justify-content-between">
-                <h6>Subtotal : <span>$618</span></h6>
+                <h6>Subtotal : <span>$ 0</span></h6>
                 <button>
                     <a
                         href="https://food-delivery-ecommerce-app.netlify.app/checkout">
@@ -78,6 +78,6 @@
 
     void Close()
     {
-        VoucherStateContainer.Property = CartEnum.Display.ToString();
+        VoucherStateContainer.Property = EnumCartType.Disable;
     }
 }

@@ -11,10 +11,10 @@
                     <button type="button" class="all__btn  @(_categoryId == 0 ? "foodBtnActive" : "") " @onclick="() => FindFoodByCategory()">All</button>
                     @foreach (var item in FoodCategoryList)
                     {
-                        string imagePath = $"assets/img/food-category/{item.category_id}.png";
-                        <button type="button" class="d-flex align-items-center gap-2 @(_categoryId == item.category_id ? "foodBtnActive" : "") " @onclick="() => FindFoodByCategory(item.category_id)">
+                        string imagePath = $"assets/img/food-category/{item.CategoryId}.png";
+                        <button type="button" class="d-flex align-items-center gap-2 @(_categoryId == item.CategoryId ? "foodBtnActive" : "") " @onclick="() => FindFoodByCategory(item.CategoryId)">
                             <img src="@(imagePath)"
-                                 alt="">@item.category_name
+                                 alt="">@item.CategoryName
                         </button>
                     }
                 </div>
@@ -31,9 +31,9 @@
             {
                 foreach (var item in _foodPagination.FoodList)
                 {
-                    string name = item.food_name;
-                    string img = $"assets/img/food/{item.food_id}.jpg";
-                    decimal price = item.food_price;
+                    string name = item.FoodName;
+                    string img = $"assets/img/food/{item.FoodId}.jpg";
+                    decimal price = item.FoodPrice;
                     string display = (string.IsNullOrEmpty(name.Trim()) ||
                                       name.ToLower().Contains(_keyword?.ToLower() ?? string.Empty)) ? "" : "display : none;";
                     <div class="mt-5 col-6 col-sm-6 col-md-4 col-lg-3" style="@display">
@@ -95,17 +95,17 @@
 
     async Task AddToCard(FoodModel item)
     {
-        _count++;
-        StateContainer.Property = _count.ToString();
         FoodSaleDataModel model = new()
         {
             SaleId = Guid.NewGuid(),
-            FoodName = item.food_name,
-            FoodPrice = item.food_price,
-            img = $"assets/img/food/{item.food_id}.jpg",
+            FoodName = item.FoodName,
+            FoodPrice = item.FoodPrice,
+            FoodPhoto = $"assets/img/food/{item.FoodId}.jpg",
             Qty = 1
         };
         await DbService.SetFoods(model);
+        _count++;
+        StateContainer.Property = _count.ToString();
         model = new();
     }
 

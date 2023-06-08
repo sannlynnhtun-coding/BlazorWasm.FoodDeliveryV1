@@ -1,14 +1,18 @@
 ﻿@implements IDisposable
+@inject IDbService _dbService
 @inject NotificationStateContainer StateContainer
 @inject VoucherStateContainer VoucherStateContainer
 
 <span class="cart__icon">
-    <i class="ri-shopping-basket-line" @onclick="SwitchDisplay">
+    <i class="ri-shopping-basket-line" @onclick="OpenCart">
     </i><span class="cart__badge">@StateContainer.Property</span>
 </span>
 @code {
-    protected override void OnInitialized()
+
+    protected override async Task OnInitializedAsync()
     {
+        var result = await _dbService.GetFoodsList();
+        StateContainer.Property = result.Count.ToString();
         StateContainer.OnChange += StateHasChanged;
     }
 
@@ -17,8 +21,9 @@
         StateContainer.OnChange -= StateHasChanged;
     }
 
-    void SwitchDisplay()
+    void OpenCart()
     {
-        VoucherStateContainer.Property = "Enable";
+        VoucherStateContainer.Property = EnumCartType.Enable;
     }
+
 }

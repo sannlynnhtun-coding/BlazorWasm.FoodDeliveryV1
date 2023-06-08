@@ -26,3 +26,11 @@
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+.mud-button-filled.mud-button-filled-primary {
+    background-color: #df2020;
+}
+
+.mud-button-filled.mud-button-filled-primary:hover, .mud-button-filled.mud-button-filled-primary:focus-visible {
+    background-color: #df2020;
+}

@@ -2,10 +2,10 @@
 {
     public class FoodModel
     {
-        public int food_id { get; set; }
-        public string food_name { get; set; }
-        public decimal food_price { get; set; }
-        public string food_photo { get; set; }
-        public int food_category { get; set; }
+        public int FoodId { get; set; }
+        public string FoodName { get; set; }
+        public decimal FoodPrice { get; set; }
+        public string FoodPhoto { get; set; }
+        public int FoodCategory { get; set; }
     }
 }
