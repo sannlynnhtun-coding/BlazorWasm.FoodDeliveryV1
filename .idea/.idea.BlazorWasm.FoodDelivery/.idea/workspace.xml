@@ -9,14 +9,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Checkout/PageCheckout.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Contact/PageContact.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/PopularFood/PagePopularFood.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/EnumCartType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/EnumCartType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Index.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Notification/PageNotification.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Notification/PageNotification.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/PopularFood/PagePopularFood.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/PopularFood/PagePopularFood.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Voucher/PageVoucher.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/FoodService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/FoodService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/VoucherStateContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/VoucherStateContainer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/app.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +44,9 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2QsBSsJyhUASEnW8jIGPU6EijPe" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -56,9 +67,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Lenovo\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\ACEBNK101\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\ACEBNK101\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\ACEBNK101\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -70,7 +81,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <browser name="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
+      <browser name="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />

@@ -14,6 +14,7 @@
 @using BlazorWasm.FoodDelivery.Pages.PopularFood
 @using BlazorWasm.FoodDelivery.Pages.Notification
 @using BlazorWasm.FoodDelivery.Pages.Cart
-@inject FoodService _FoodService
+@inject FoodService FoodService
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorageService
 @inject IDbService DbService
+@inject NavigationManager NavigationManager

@@ -1,108 +1,109 @@
-@implements IDisposable
-@inject VoucherStateContainer VoucherStateContainer
-@inject NotificationStateContainer StateContainer
-
-@if (VoucherStateContainer.Property == EnumCartType.Enable && VoucherStateContainer.FoodLst != null &&
-VoucherStateContainer.FoodLst.Count > 0)
-{
-    {
-        LstFood = VoucherStateContainer.FoodLst;
-    }
-    <div class="cart__container">
-        <ul class="cart list-group">
-            <div class="cart__close">
-                <span>
-                    <i class="ri-close-fill" @onclick="Close"></i>
-                </span>
-            </div>
-            <div class="cart__item-list">
-                @foreach (var item in LstFood)
-                {
-                <li class="border-0 cart__item list-group-item">
-                    <div class="cart__item-info d-flex gap-2">
-                        <img src="@item.FoodPhoto" alt="product-img">
-                        <div class="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
-                            <div>
-                                <h6 class="cart__product-title">@item.FoodName</h6>
-                                <p class=" d-flex align-items-center gap-5 cart__product-price">
-                                    <span>@(item.FoodPrice)$</span>
-                                </p>
-                                <div class=" d-flex align-items-center justify-content-between increase__decrease-btn">
-                                    <span class="decrease__btn">
-                                        <i class="ri-subtract-line" @onclick="()=> ItemDecreasement(item)"></i>
-                                    </span>
-                                    <span class=" quantity">
-                                            @item.Qty
-                                    </span>
-                                    <span class="increase__btn">
-                                        <i class="ri-add-line" @onclick="()=> ItemIncreasement(item)"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <span class="delete__btn">
-                                <i class="ri-close-line" @onclick="()=> RemoveItem(item)"></i>
-                            </span>
-                        </div>
+@page "/cart"
+<section>
+    <div class="container">
+    <h5 class="testimonial__subtitle mb-4">Cart</h5>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product Title</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="text-center cart__img-box">
+                            <img
+                                src="./Food ordering app -Cart_files/product_01.6be97a61.jpg"
+                                alt="">
+                        </td>
+                        <td class="text-center">Chicken Burger</td>
+                        <td class="text-center">$24</td>
+                        <td class="text-center">7px</td>
+                        <td class="text-center cart__item-del">
+                            <i
+                                class="ri-delete-bin-line">
+                            </i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center cart__img-box">
+                            <img
+                                src="./Food ordering app -Cart_files/product_2.1.f1538554.jpg"
+                                alt="">
+                        </td>
+                        <td class="text-center">Vegetarian Pizza</td>
+                        <td class="text-center">$115</td>
+                        <td class="text-center">2px</td>
+                        <td class="text-center cart__item-del">
+                            <i
+                                class="ri-delete-bin-line">
+                            </i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center cart__img-box">
+                            <img
+                                src="./Food ordering app -Cart_files/product_3.1.9c207cdf.jpg"
+                                alt="">
+                        </td>
+                        <td class="text-center">Double Cheese Margherita</td>
+                        <td class="text-center">$110</td>
+                        <td class="text-center">1px</td>
+                        <td class="text-center cart__item-del">
+                            <i
+                                class="ri-delete-bin-line">
+                            </i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center cart__img-box">
+                            <img
+                                src="./Food ordering app -Cart_files/product_4.1.3c8ecc49.jpg"
+                                alt="">
+                        </td>
+                        <td class="text-center">Maxican Green Wave</td>
+                        <td class="text-center">$110</td>
+                        <td class="text-center">1px</td>
+                        <td class="text-center cart__item-del">
+                            <i
+                                class="ri-delete-bin-line">
+                            </i>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="mt-4">
+                    <h6>Subtotal: $<span class="cart__subtotal">618</span></h6>
+                    <p>Taxes and shipping will calculate at checkout</p>
+                    <div class="cart__page-btn">
+                        <button class="addTOCart__btn me-4">
+                            <NavLink
+                                href="">
+                                Continue
+                                Shopping
+                            </NavLink>
+                        </button>
+                        <button class="addTOCart__btn">
+                            <NavLink
+                                href="checkout">
+                                Proceed
+                                to checkout
+                            </NavLink>
+                        </button>
                     </div>
-                </li>
-                }
-    </div>
-    <div class="cart__bottom d-flex align-items-center justify-content-between">
-        <h6>TotalAmount : <span>$@(LstFood.Select((x => x.FoodPrice)).Sum())</span></h6>
-        <button>
-            <a href="https://food-delivery-ecommerce-app.netlify.app/checkout">
-                Checkout
-            </a>
-        </button>
-    </div>
-        </ul>
+                </div>
+            </div>
         </div>
-}
+    </div>
+</section>
 
 @code {
-    private List<FoodSaleDataModel> LstFood { get; set; } = new();
-    protected override async Task OnInitializedAsync()
-    {
-        LstFood = await DbService.GetFoodsList();
-        VoucherStateContainer.OnChange += StateHasChanged;
-    }
-
-    public void Dispose()
-    {
-        VoucherStateContainer.OnChange -= StateHasChanged;
-    }
-
-    async Task Close()
-    {
-        LstFood = await DbService.GetFoodsList();
-        VoucherStateContainer.Property = EnumCartType.Disable;
-    }
-
-    async Task ItemIncreasement(FoodSaleDataModel item)
-    {
-        await DbService.ItemIncrement(item);
-        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
-    }
-
-    async Task ItemDecreasement(FoodSaleDataModel item)
-    {
-        await DbService.ItemDecreasement(item);
-        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
-        StateContainer.Property = VoucherStateContainer.FoodLst != null ? 
-                                    VoucherStateContainer.FoodLst
-                                    .Select(x=> x.Qty)
-                                    .Sum()
-                                    .ToString() : "0";
-    }
-
-    async Task RemoveItem(FoodSaleDataModel item)
-    {
-        await DbService.RemoveItem(item);
-        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
-        StateContainer.Property = VoucherStateContainer.FoodLst != null ?
-                                    VoucherStateContainer.FoodLst
-                                    .Select(x => x.Qty)
-                                    .Sum()
-                                    .ToString() : "0";
-    }
+    
 }
