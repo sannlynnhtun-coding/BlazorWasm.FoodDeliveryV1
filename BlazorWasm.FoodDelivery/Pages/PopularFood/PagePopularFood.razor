@@ -77,7 +77,6 @@
     private List<FoodModel> FoodList { get; set; } = new();
     private FoodPaginationResponseModel? _foodPagination;
     private int _categoryId = 0;
-    private int _count = 0;
     private string? _keyword = "";
 
     protected override void OnInitialized()
@@ -104,8 +103,8 @@
             Qty = 1
         };
         await DbService.SetFoods(model);
-        _count++;
-        StateContainer.Property = _count.ToString();
+        var result = await DbService.GetFoodsList();
+        StateContainer.Property = result.Count.ToString();
         model = new();
     }
 
