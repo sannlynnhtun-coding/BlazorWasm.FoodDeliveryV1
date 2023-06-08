@@ -4,6 +4,6 @@ namespace BlazorWasm.FoodDelivery.Services;
 
 public interface IDbService
 {
-    Task<List<FoodSaleDataModel>> GetFoods();
+    Task<List<FoodSaleDataModel>> GetFoodsList();
     Task SetFoods(FoodSaleDataModel item);
 }

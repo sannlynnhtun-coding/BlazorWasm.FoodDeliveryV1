@@ -11,40 +11,43 @@
                 </span>
             </div>
             <div class="cart__item-list">
-                <li class="border-0 cart__item list-group-item">
-                    <div class="cart__item-info d-flex gap-2">
-                        <img
-                            src="./Food ordering app -Order_files/product_01.6be97a61.jpg" alt="product-img">
-                        <div
-                            class="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
-                            <div>
-                                <h6 class="cart__product-title">Chicken Burger</h6>
-                                <p class=" d-flex align-items-center gap-5 cart__product-price">
-                                    7x
-                                    <span>$168</span>
-                                </p>
-                                <div
-                                    class=" d-flex align-items-center justify-content-between increase__decrease-btn">
-                                    <span class="increase__btn">
-                                        <i class="ri-add-line"></i>
-                                    </span>
-                                    <span
-                                        class="quantity">
-                                        7
-                                    </span>
-                                    <span class="decrease__btn">
-                                        <i
-                                            class="ri-subtract-line">
-                                        </i>
-                                    </span>
+                @foreach (var item in _lstFood)
+                {
+                    <li class="border-0 cart__item list-group-item">
+                        <div class="cart__item-info d-flex gap-2">
+                            <img
+                                src="./Food ordering app -Order_files/product_01.6be97a61.jpg" alt="product-img">
+                            <div
+                                class="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
+                                <div>
+                                    <h6 class="cart__product-title">@item.FoodName</h6>
+                                    <p class=" d-flex align-items-center gap-5 cart__product-price">
+                                        @(item.Qty)x
+                                        <span>@(item.FoodPrice * item.Qty)</span>
+                                    </p>
+                                    <div
+                                        class=" d-flex align-items-center justify-content-between increase__decrease-btn">
+                                        <span class="increase__btn">
+                                            <i class="ri-add-line"></i>
+                                        </span>
+                                        <span
+                                            class="quantity">
+                                            7
+                                        </span>
+                                        <span class="decrease__btn">
+                                            <i
+                                                class="ri-subtract-line">
+                                            </i>
+                                        </span>
+                                    </div>
                                 </div>
+                                <span class="delete__btn">
+                                    <i class="ri-close-line"></i>
+                                </span>
                             </div>
-                            <span class="delete__btn">
-                                <i class="ri-close-line"></i>
-                            </span>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                }
             </div>
             <div class="cart__bottom d-flex align-items-center justify-content-between">
                 <h6>Subtotal : <span>$618</span></h6>
@@ -60,9 +63,12 @@
 }
 
 @code {
-    protected override void OnInitialized()
+
+    private List<FoodSaleDataModel> _lstFood { get; set; }= new();
+    protected override async Task OnInitializedAsync()
     {
         VoucherStateContainer.OnChange += StateHasChanged;
+        _lstFood = await DbService.GetFoodsList();
     }
 
     public void Dispose()
