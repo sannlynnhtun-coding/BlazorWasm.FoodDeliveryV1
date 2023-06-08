@@ -27,17 +27,17 @@
                                     </p>
                                     <div
                                         class=" d-flex align-items-center justify-content-between increase__decrease-btn">
-                                        <span class="increase__btn">
-                                            <i class="ri-add-line"></i>
+                                        <span class="decrease__btn">
+                                            <i
+                                                class="ri-subtract-line">
+                                            </i>
                                         </span>
                                         <span
                                             class="quantity">
                                             7
                                         </span>
-                                        <span class="decrease__btn">
-                                            <i
-                                                class="ri-subtract-line">
-                                            </i>
+                                        <span class="increase__btn">
+                                            <i class="ri-add-line"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -64,7 +64,8 @@
 
 @code {
 
-    private List<FoodSaleDataModel> _lstFood { get; set; }= new();
+    private List<FoodSaleDataModel> _lstFood { get; set; } = new();
+
     protected override async Task OnInitializedAsync()
     {
         VoucherStateContainer.OnChange += StateHasChanged;
@@ -80,4 +81,5 @@
     {
         VoucherStateContainer.Property = CartEnum.Display.ToString();
     }
+
 }
