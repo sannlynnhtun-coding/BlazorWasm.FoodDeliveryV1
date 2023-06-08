@@ -56,31 +56,31 @@ namespace BlazorWasm.FoodDelivery.Services
           ""FoodCategory"": 1
         },
         {
-          ""FoodId"": 2,
+          ""FoodId"": 5,
           ""FoodName"": ""Cheese Burger"",
           ""FoodPrice"": 24,
           ""FoodCategory"": 1
         },
         {
-          ""FoodId"": 3,
+          ""FoodId"": 6,
           ""FoodName"": ""Royal Cheese Burger"",
           ""FoodPrice"": 24,
           ""FoodCategory"": 1
         },
         {
-          ""FoodId"": 4,
+          ""FoodId"": 10,
           ""FoodName"": ""Classic Hamburger"",
           ""FoodPrice"": 24,
           ""FoodCategory"": 1
         },
         {
-          ""FoodId"": 5,
+          ""FoodId"": 2,
           ""FoodName"": ""Vegetarian Pizza"",
           ""FoodPrice"": 115,
           ""FoodCategory"": 2
         },
         {
-          ""FoodId"": 6,
+          ""FoodId"": 3,
           ""FoodName"": ""Double Cheese Margherita"",
           ""FoodPrice"": 110,
           ""FoodCategory"": 2
@@ -101,7 +101,7 @@ namespace BlazorWasm.FoodDelivery.Services
           ""FoodPrice"": 110,
           ""FoodCategory"": 2
         },{
-          ""FoodId"": 10,
+          ""FoodId"": 4,
           ""FoodName"": ""Pizza With Mushroom"",
           ""FoodPrice"": 110,
           ""FoodCategory"": 2

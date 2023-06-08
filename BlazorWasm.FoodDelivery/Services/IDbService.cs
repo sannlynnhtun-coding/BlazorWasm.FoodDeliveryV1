@@ -6,4 +6,7 @@ public interface IDbService
 {
     Task<List<FoodSaleDataModel>> GetFoodsList();
     Task SetFoods(FoodSaleDataModel item);
+    Task ItemIncrement(FoodSaleDataModel item);
+    Task ItemDecreasement(FoodSaleDataModel item);
+    Task RemoveItem(FoodSaleDataModel item);
 }

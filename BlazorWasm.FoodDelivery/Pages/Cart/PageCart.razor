@@ -1,5 +1,6 @@
 @implements IDisposable
-@inject VoucherStateContainer VoucherStateContainer 
+@inject VoucherStateContainer VoucherStateContainer
+@inject NotificationStateContainer StateContainer
 
 @if (VoucherStateContainer.Property == EnumCartType.Enable && VoucherStateContainer.FoodLst != null &&
 VoucherStateContainer.FoodLst.Count > 0)
@@ -17,55 +18,49 @@ VoucherStateContainer.FoodLst.Count > 0)
             <div class="cart__item-list">
                 @foreach (var item in LstFood)
                 {
-                    <li class="border-0 cart__item list-group-item">
-                        <div class="cart__item-info d-flex gap-2">
-                            <img
-                                src="@item.FoodPhoto" alt="product-img">
-                            <div
-                                class="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
-                                <div>
-                                    <h6 class="cart__product-title">@item.FoodName</h6>
-                                    <p class=" d-flex align-items-center gap-5 cart__product-price">
-                                        <span>@(item.FoodPrice * item.Qty)$</span>
-                                    </p>
-                                    <div
-                                        class=" d-flex align-items-center justify-content-between increase__decrease-btn">
-                                        <span class="decrease__btn">
-                                            <i class="ri-subtract-line" @onclick="()=> "></i>
-                                        </span>
-                                        <span
-                                            class="quantity">
+                <li class="border-0 cart__item list-group-item">
+                    <div class="cart__item-info d-flex gap-2">
+                        <img src="@item.FoodPhoto" alt="product-img">
+                        <div class="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
+                            <div>
+                                <h6 class="cart__product-title">@item.FoodName</h6>
+                                <p class=" d-flex align-items-center gap-5 cart__product-price">
+                                    <span>@(item.FoodPrice)$</span>
+                                </p>
+                                <div class=" d-flex align-items-center justify-content-between increase__decrease-btn">
+                                    <span class="decrease__btn">
+                                        <i class="ri-subtract-line" @onclick="()=> ItemDecreasement(item)"></i>
+                                    </span>
+                                    <span class=" quantity">
                                             @item.Qty
-                                        </span>
-                                        <span class="increase__btn">
-                                            <i class="ri-add-line"></i>
-                                        </span>
-                                    </div>
+                                    </span>
+                                    <span class="increase__btn">
+                                        <i class="ri-add-line" @onclick="()=> ItemIncreasement(item)"></i>
+                                    </span>
                                 </div>
-                                <span class="delete__btn">
-                                    <i class="ri-close-line"></i>
-                                </span>
                             </div>
+                            <span class="delete__btn">
+                                <i class="ri-close-line" @onclick="()=> RemoveItem(item)"></i>
+                            </span>
                         </div>
-                    </li>
+                    </div>
+                </li>
                 }
-            </div>
-            <div class="cart__bottom d-flex align-items-center justify-content-between">
-                <h6>Subtotal : <span>$@(LstFood.Select((x=>x.FoodPrice)).Sum())</span></h6>
-                <button>
-                    <a
-                        href="https://food-delivery-ecommerce-app.netlify.app/checkout">
-                        Checkout
-                    </a>
-                </button>
-            </div>
-        </ul>
     </div>
+    <div class="cart__bottom d-flex align-items-center justify-content-between">
+        <h6>TotalAmount : <span>$@(LstFood.Select((x => x.FoodPrice)).Sum())</span></h6>
+        <button>
+            <a href="https://food-delivery-ecommerce-app.netlify.app/checkout">
+                Checkout
+            </a>
+        </button>
+    </div>
+        </ul>
+        </div>
 }
 
 @code {
     private List<FoodSaleDataModel> LstFood { get; set; } = new();
-
     protected override async Task OnInitializedAsync()
     {
         LstFood = await DbService.GetFoodsList();
@@ -81,5 +76,33 @@ VoucherStateContainer.FoodLst.Count > 0)
     {
         LstFood = await DbService.GetFoodsList();
         VoucherStateContainer.Property = EnumCartType.Disable;
+    }
+
+    async Task ItemIncreasement(FoodSaleDataModel item)
+    {
+        await DbService.ItemIncrement(item);
+        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
+    }
+
+    async Task ItemDecreasement(FoodSaleDataModel item)
+    {
+        await DbService.ItemDecreasement(item);
+        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
+        StateContainer.Property = VoucherStateContainer.FoodLst != null ? 
+                                    VoucherStateContainer.FoodLst
+                                    .Select(x=> x.Qty)
+                                    .Sum()
+                                    .ToString() : "0";
+    }
+
+    async Task RemoveItem(FoodSaleDataModel item)
+    {
+        await DbService.RemoveItem(item);
+        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
+        StateContainer.Property = VoucherStateContainer.FoodLst != null ?
+                                    VoucherStateContainer.FoodLst
+                                    .Select(x => x.Qty)
+                                    .Sum()
+                                    .ToString() : "0";
     }
 }

@@ -12,7 +12,7 @@
     protected override async Task OnInitializedAsync()
     {
         var result = await _dbService.GetFoodsList();
-        StateContainer.Property = result.Count.ToString();
+        StateContainer.Property = result.Select(x=> x.Qty).Sum().ToString();
         StateContainer.OnChange += StateHasChanged;
     }
 
@@ -21,9 +21,10 @@
         StateContainer.OnChange -= StateHasChanged;
     }
 
-    void OpenCart()
+    async Task OpenCart()
     {
         VoucherStateContainer.Property = EnumCartType.Enable;
+        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
     }
 
 }
