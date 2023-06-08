@@ -10,7 +10,7 @@ namespace BlazorWasm.FoodDelivery.Services
 
         public List<FoodCategoryModel> FoodCategoryList => Get<FoodCategoryModel>(JsonData.FoodCategory);
 
-        public FoodPaginationResponseModel GetFoods(int category_id = 0, int pageNo = 1, int pageSize = 8)
+        public FoodPaginationResponseModel? GetFoods(int category_id = 0, int pageNo = 1, int pageSize = 8)
         {
             int count = 0;
             int totalPageNo = 0;

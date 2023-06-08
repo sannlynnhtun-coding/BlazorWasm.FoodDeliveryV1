@@ -11,7 +11,7 @@
                 </span>
             </div>
             <div class="cart__item-list">
-                @foreach (var item in _lstFood)
+                @foreach (var item in LstFood)
                 {
                     <li class="border-0 cart__item list-group-item">
                         <div class="cart__item-info d-flex gap-2">
@@ -63,13 +63,12 @@
 }
 
 @code {
-
-    private List<FoodSaleDataModel> _lstFood { get; set; } = new();
+    private List<FoodSaleDataModel> LstFood { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
         VoucherStateContainer.OnChange += StateHasChanged;
-        _lstFood = await DbService.GetFoodsList();
+        LstFood = await DbService.GetFoodsList();
     }
 
     public void Dispose()
@@ -81,5 +80,4 @@
     {
         VoucherStateContainer.Property = CartEnum.Display.ToString();
     }
-
 }

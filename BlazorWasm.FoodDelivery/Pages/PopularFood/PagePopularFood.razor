@@ -27,15 +27,15 @@
                     </span>
                 </div>
             </div>
-            @if (foodPagination != null)
+            @if (_foodPagination != null)
             {
-                foreach (var item in foodPagination.FoodList)
+                foreach (var item in _foodPagination.FoodList)
                 {
                     string name = item.food_name;
                     string img = $"assets/img/food/{item.food_id}.jpg";
                     decimal price = item.food_price;
                     string display = (string.IsNullOrEmpty(name.Trim()) ||
-                                      name.ToLower().Contains(_keyword.ToLower())) ? "" : "display : none;";
+                                      name.ToLower().Contains(_keyword?.ToLower() ?? string.Empty)) ? "" : "display : none;";
                     <div class="mt-5 col-6 col-sm-6 col-md-4 col-lg-3" style="@display">
                         <div class="product__item">
                             <div class="product__img">
@@ -64,7 +64,7 @@
                 if (_categoryId == 0)
                 {
                     <div class="text-center">
-                        <MudPagination SelectedChanged="PageChanged" ShowFirstButton="true" ShowLastButton="true" Count="foodPagination.TotalPageNo" Class="mt-4"/>
+                        <MudPagination SelectedChanged="PageChanged" ShowFirstButton="true" ShowLastButton="true" Count="_foodPagination.TotalPageNo" Class="mt-4"/>
                     </div>
                 }
             }
@@ -75,10 +75,10 @@
 @code {
     private List<FoodCategoryModel> FoodCategoryList { get; set; } = new();
     private List<FoodModel> FoodList { get; set; } = new();
-    private FoodPaginationResponseModel foodPagination;
+    private FoodPaginationResponseModel? _foodPagination;
     private int _categoryId = 0;
     private int _count = 0;
-    private string _keyword = "";
+    private string? _keyword = "";
 
     protected override void OnInitialized()
     {
@@ -89,7 +89,7 @@
     void FindFoodByCategory(int categoryId = 0)
     {
         _categoryId = categoryId;
-        foodPagination = _FoodService.GetFoods(categoryId);
+        _foodPagination = _FoodService.GetFoods(categoryId);
         StateHasChanged();
     }
 
@@ -111,12 +111,11 @@
 
     void Search(ChangeEventArgs e)
     {
-        _keyword = e.Value.ToString();
+        _keyword = e.Value?.ToString();
     }
 
     void PageChanged(int pageNo)
     {
-        foodPagination = _FoodService.GetFoods(_categoryId = 0, pageNo, 8);
+        _foodPagination = _FoodService.GetFoods(_categoryId = 0, pageNo);
     }
-
 }

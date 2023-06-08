@@ -2,17 +2,11 @@
 @inject NotificationStateContainer StateContainer
 @inject VoucherStateContainer VoucherStateContainer
 
-
-    <span class="cart__icon">
-        <i class="ri-shopping-basket-line" @onclick="SwitchDisplay">
-        </i><span class="cart__badge">@StateContainer.Property</span>
-    </span>
-
-    
-
-
+<span class="cart__icon">
+    <i class="ri-shopping-basket-line" @onclick="SwitchDisplay">
+    </i><span class="cart__badge">@StateContainer.Property</span>
+</span>
 @code {
-
     protected override void OnInitialized()
     {
         StateContainer.OnChange += StateHasChanged;
@@ -27,5 +21,4 @@
     {
         VoucherStateContainer.Property = "Enable";
     }
-
 }
