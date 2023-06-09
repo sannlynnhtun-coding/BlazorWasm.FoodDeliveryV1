@@ -44,6 +44,12 @@ namespace BlazorWasm.FoodDelivery.Services
         {
             return JsonConvert.DeserializeObject<List<T>>(jsonStr);
         }
+
+        public List<EnumPageType> GetPages()
+        {
+            List<EnumPageType> pageTypes = Enum.GetValues(typeof(EnumPageType)).Cast<EnumPageType>().ToList();
+            return pageTypes;
+        }
     }
 
     public static class JsonData

@@ -7,12 +7,13 @@
     <i class="ri-shopping-basket-line" @onclick="OpenCart">
     </i><span class="cart__badge">@StateContainer.Property</span>
 </span>
+
 @code {
 
     protected override async Task OnInitializedAsync()
     {
         var result = await _dbService.GetFoodsList();
-        StateContainer.Property = result.Select(x=> x.Qty).Sum().ToString();
+        StateContainer.Property = result.Select(x => x.Qty).Sum().ToString();
         StateContainer.OnChange += StateHasChanged;
     }
 

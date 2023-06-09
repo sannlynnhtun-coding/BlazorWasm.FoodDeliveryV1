@@ -12,23 +12,15 @@
                 </div>
                 <div class="navigation">
                     <div class="menu d-flex align-items-center gap-5">
-                        <a class="active__menu"
-                           href="https://food-delivery-ecommerce-app.netlify.app/home"
-                           aria-current="page">
-                            Home
-                        </a>
-                        <a class=""
-                           href="https://food-delivery-ecommerce-app.netlify.app/foods">
-                            Foods
-                        </a>
-                        <a class=""
-                           href="https://food-delivery-ecommerce-app.netlify.app/cart">
-                            Cart
-                        </a>
-                        <a class=""
-                           href="https://food-delivery-ecommerce-app.netlify.app/contact">
-                            Contact
-                        </a>
+                        @foreach (var page in FoodService.GetPages())
+                        {
+                            <a class="@(page == _pageType ? "active__menu" : "")"
+                               href="javascript:void(0);"
+                               @onclick="() => GoToPage(page)"
+                               aria-current="page">
+                                @(page.ToString())
+                            </a>
+                        }
                     </div>
                 </div>
                 <div class="nav__right d-flex align-items-center gap-4">
@@ -51,7 +43,6 @@
         </div>
     </header>
 </div>
-<PageCart/>
 <div class="w-100">
     @Body
     <footer class="footer">

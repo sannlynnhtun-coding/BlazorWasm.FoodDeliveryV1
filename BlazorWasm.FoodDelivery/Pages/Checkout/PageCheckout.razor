@@ -1,0 +1,14 @@
+@page "/checkout"
+
+@code{
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        var result = await DbService.GetFoodsList();
+        if (result.Count == 0)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+    }
+
+}
