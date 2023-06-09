@@ -9,14 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Notification/PageNotification.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Notification/PageNotification.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/PopularFood/PagePopularFood.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/PopularFood/PagePopularFood.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Voucher/PageVoucher.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/FoodService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/FoodService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/VoucherDetailDataModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/CartDetailDataModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/VoucherHeadDataModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/CartHeadDataModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/VoucherStateContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/VoucherStateContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/_Imports.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,28 +37,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Lenovo\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Lenovo\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Lenovo\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BlazorWasm.FoodDelivery">
     <configuration name="BlazorWasm.FoodDelivery" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorWasm.FoodDelivery/BlazorWasm.FoodDelivery.csproj" />
@@ -112,6 +109,8 @@
       <workItem from="1686196712565" duration="479000" />
       <workItem from="1686227917553" duration="612000" />
       <workItem from="1686234733101" duration="1315000" />
+      <workItem from="1686241046303" duration="77000" />
+      <workItem from="1686281193988" duration="2342000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1686196730505</created>

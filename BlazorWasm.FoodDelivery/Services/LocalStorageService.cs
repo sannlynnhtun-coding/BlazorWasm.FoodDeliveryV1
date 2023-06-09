@@ -87,4 +87,23 @@ public class LocalStorageService : IDbService
         lst.RemoveAt(index);
         await _localStorageService.SetItemAsync("FoodSale", lst);
     }
+
+    public async Task<List<CartDetailDataModel>> GetCartDeatil()
+    {
+        var lst = await _localStorageService.GetItemAsync<List<CartDetailDataModel>>("CartDetail");
+        lst ??= new();
+        return lst;
+    }
+
+    public async Task<List<CartHeadDataModel>> GetCartHead()
+    {
+        var lst = await _localStorageService.GetItemAsync<List<CartHeadDataModel>>("CartHead");
+        lst ??= new();
+        return lst;
+    }
+
+    public async Task SetCartDeatil()
+    {
+        var lst = await _localStorageService.GetItemAsync<List<FoodSaleDataModel>>("FoodSale");
+    }
 }

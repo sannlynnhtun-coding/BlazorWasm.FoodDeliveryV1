@@ -49,10 +49,8 @@ VoucherStateContainer.FoodLst.Count > 0)
     </div>
     <div class="cart__bottom d-flex align-items-center justify-content-between">
         <h6>TotalAmount : <span>$@(LstFood.Select((x => x.FoodPrice)).Sum())</span></h6>
-        <button>
-            <a href="https://food-delivery-ecommerce-app.netlify.app/checkout">
+        <button type="button" @onclick="CartFinish">
                 Checkout
-            </a>
         </button>
     </div>
         </ul>
@@ -104,5 +102,10 @@ VoucherStateContainer.FoodLst.Count > 0)
                                     .Select(x => x.Qty)
                                     .Sum()
                                     .ToString() : "0";
+    }
+
+    async Task CartFinish()
+    {
+        
     }
 }

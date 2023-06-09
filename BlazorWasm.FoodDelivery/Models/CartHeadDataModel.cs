@@ -1,6 +1,6 @@
 namespace BlazorWasm.FoodDelivery.Models;
 
-public class VoucherHeadDataModel
+public class CartHeadDataModel
 {
     public Guid SaleVoucherHeadId { get; set; }
     public Guid SaleVoucherNo { get; set; }
