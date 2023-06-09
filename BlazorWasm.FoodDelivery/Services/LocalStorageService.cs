@@ -102,8 +102,48 @@ public class LocalStorageService : IDbService
         return lst;
     }
 
-    public async Task SetCartDeatil()
+    public async Task SetCartDeatil(CartDetailDataModel item)
     {
-        var lst = await _localStorageService.GetItemAsync<List<FoodSaleDataModel>>("FoodSale");
+        var lst = await _localStorageService.GetItemAsync<List<CartDetailDataModel>>("CartDetail");
+        lst ??= new();
+        lst.Add(item);
+        await _localStorageService.SetItemAsync("CartDetail", lst);
+    }
+
+    public async Task SetCartHead(CartHeadDataModel item)
+    {
+        var lst = await _localStorageService.GetItemAsync<List<CartHeadDataModel>>("CartHead");
+        lst ??= new();
+        lst.Add(item);
+        await _localStorageService.SetItemAsync("CartHead", lst);
+    }
+
+    public async Task CheckOut()
+    {
+        Guid head_id = Guid.NewGuid();
+        CartDetailDataModel detailModel = new();
+        CartHeadDataModel headModel = new();
+
+        var lstFood = await GetFoodsList();
+        if (lstFood != null && lstFood.Count() > 0)
+        {
+            foreach (var item in lstFood)
+            {
+                detailModel.CartDetailId = Guid.NewGuid();
+                detailModel.CartHeadId = head_id;
+                detailModel.FoodName = item.FoodName;
+                detailModel.FoodPrice = item.FoodPrice;
+                detailModel.Qty = item.Qty;
+                detailModel.DetailDate = DateTime.Now;
+                await SetCartDeatil(detailModel);
+            }
+
+            headModel.CartHeadId = head_id;
+            headModel.CartNo = Guid.NewGuid();
+            headModel.TotalAmount = lstFood.Select(x => x.FoodPrice).Sum();
+            headModel.HeadDate = DateTime.Now;
+            await SetCartHead(headModel);
+            _localStorageService.RemoveItemAsync("FoodSale");
+        }
     }
 }

@@ -53,8 +53,16 @@ public partial class PageCartSlide
             : "0";
     }
 
-    void Checkout()
+    async Task Checkout()
     {
+        await DbService.CheckOut();
+        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
+        StateContainer.Property = VoucherStateContainer.FoodLst != null
+            ? VoucherStateContainer.FoodLst
+                .Select(x => x.Qty)
+                .Sum()
+                .ToString()
+            : "0";
         VoucherStateContainer.Property = EnumCartType.Disable;
         NavigationManager.NavigateTo("checkout");
     }
