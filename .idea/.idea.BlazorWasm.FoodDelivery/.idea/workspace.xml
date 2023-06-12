@@ -8,8 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="">
+    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="-">
+      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/MenuStateContainer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +69,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <browser name="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
@@ -105,6 +111,7 @@
       <workItem from="1686196712565" duration="479000" />
       <workItem from="1686227917553" duration="612000" />
       <workItem from="1686234733101" duration="1315000" />
+      <workItem from="1686590965972" duration="2793000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1686196730505</created>
@@ -141,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686318551955</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="-">
+      <created>1686591571843</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686591571843</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +178,25 @@
     <MESSAGE value="-SaleInProgress" />
     <MESSAGE value="-" />
     <option name="LAST_COMMIT_MESSAGE" value="-" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor.cs</url>
+          <line>8</line>
+          <properties documentPath="D:\slh\proj\BlazorWasm.FoodDelivery\BlazorWasm.FoodDelivery\Shared\MainLayout.razor.cs" initialLine="8" containingFunctionPresentation="Method 'OnInitialized'">
+            <startOffsets>
+              <option value="221" />
+            </startOffsets>
+            <endOffsets>
+              <option value="222" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,7 @@
 ﻿@inherits LayoutComponentBase
 @implements IDisposable
-@inject NotificationStateContainer StateContainer
+@inject NotificationStateContainer _notificationStateContainer
+@inject MenuStateContainer _menuStateContainer
 
 <div style=" position: -webkit-sticky; position: sticky; top: 0; z-index: 99;">
     <header class="header header__shrink">
@@ -14,7 +15,7 @@
                     <div class="menu d-flex align-items-center gap-5">
                         @foreach (var page in FoodService.GetPages())
                         {
-                            <a class="@(page == _pageType ? "active__menu" : "")"
+                            <a class="@(page == _menuStateContainer.PageType ? "active__menu" : "")"
                                href="javascript:void(0);"
                                @onclick="() => GoToPage(page)"
                                aria-current="page">

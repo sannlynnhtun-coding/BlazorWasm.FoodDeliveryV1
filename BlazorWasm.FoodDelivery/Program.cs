@@ -16,6 +16,7 @@ builder.Services.AddSingleton<IDbService, LocalStorageService>();
 builder.Services.AddSingleton<FoodService>();
 builder.Services.AddSingleton<NotificationStateContainer>();
 builder.Services.AddSingleton<VoucherStateContainer>();
+builder.Services.AddSingleton<MenuStateContainer>();
 
 builder.Services.AddMudServices();
 await builder.Build().RunAsync();

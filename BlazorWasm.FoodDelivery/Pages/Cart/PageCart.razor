@@ -1,4 +1,6 @@
 @page "/cart"
+@inject MenuStateContainer _menuStateContainer
+
 <section>
     <div class="container">
     <h5 class="testimonial__subtitle mb-4">Cart</h5>
@@ -83,12 +85,13 @@
                     <h6>Subtotal: $<span class="cart__subtotal">618</span></h6>
                     <p>Taxes and shipping will calculate at checkout</p>
                     <div class="cart__page-btn">
-                        <button class="addTOCart__btn me-4">
-                            <NavLink
-                                href="">
-                                Continue
-                                Shopping
-                            </NavLink>
+                        <button class="addTOCart__btn me-4" @onclick="GoToPage">
+                        Continue Shopping
+                            @* <NavLink *@
+                            @*     href=""> *@
+                            @*     Continue *@
+                            @*     Shopping *@
+                            @* </NavLink> *@
                         </button>
                         <button class="addTOCart__btn">
                             <NavLink
@@ -105,5 +108,10 @@
 </section>
 
 @code {
-    
+
+    void GoToPage()
+    {
+        _menuStateContainer.PageType = EnumPageType.Home;
+        NavigationManager.NavigateTo("");
+    }
 }
