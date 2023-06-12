@@ -10,12 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/CartDetailDataModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/CartDetailDataModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/CartHeadDataModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Models/CartHeadDataModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/IDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/IDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Users/Lenovo/source/repos/BlazorWasm.FoodDelivery/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Users/Lenovo/source/repos/BlazorWasm.FoodDelivery/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/slh/proj/BlazorWasm.FoodDelivery/BlazorWasm.FoodDelivery/Pages/Checkout/PageCheckout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -141,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686288901400</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="-">
+      <created>1686318551955</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686318551955</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
