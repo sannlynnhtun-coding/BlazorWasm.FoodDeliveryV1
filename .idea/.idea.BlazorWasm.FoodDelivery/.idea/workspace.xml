@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="" />
+    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="add share logo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,6 +107,7 @@
       <workItem from="1686234733101" duration="1315000" />
       <workItem from="1686590965972" duration="16658000" />
       <workItem from="1686645958090" duration="2314000" />
+      <workItem from="1686653147809" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1686196730505</created>
@@ -192,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686647583297</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add share logo">
+      <created>1686653232104</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686653232104</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +228,8 @@
     <MESSAGE value="Update Notification Count when checkout" />
     <MESSAGE value="add new files" />
     <MESSAGE value="add logo file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add logo file" />
+    <MESSAGE value="add share logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add share logo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
