@@ -118,32 +118,41 @@ public class LocalStorageService : IDbService
         await _localStorageService.SetItemAsync("CartHead", lst);
     }
 
-    public async Task CheckOut()
+    public async Task<ReceiptResponseModel> CheckOut()
     {
-        Guid head_id = Guid.NewGuid();
-        CartDetailDataModel detailModel = new();
-        CartHeadDataModel headModel = new();
-
+        ReceiptResponseModel model = new ReceiptResponseModel();
+        Guid cartHeadId = Guid.NewGuid();
+        
+        CartHeadDataModel head = new();
+        List<CartDetailDataModel> details = new();
+        
         var lstFood = await GetFoodsList();
         if (lstFood != null && lstFood.Count() > 0)
         {
             foreach (var item in lstFood)
             {
+                CartDetailDataModel detailModel = new();
                 detailModel.CartDetailId = Guid.NewGuid();
-                detailModel.CartHeadId = head_id;
+                detailModel.CartHeadId = cartHeadId;
                 detailModel.FoodName = item.FoodName;
                 detailModel.FoodPrice = item.FoodPrice;
                 detailModel.Qty = item.Qty;
                 detailModel.DetailDate = DateTime.Now;
-                await SetCartDeatil(detailModel);
+                // await SetCartDeatil(detailModel);
+                details.Add(detailModel);
             }
 
-            headModel.CartHeadId = head_id;
-            headModel.CartNo = Guid.NewGuid();
-            headModel.TotalAmount = lstFood.Select(x => x.FoodPrice).Sum();
-            headModel.HeadDate = DateTime.Now;
-            await SetCartHead(headModel);
-            _localStorageService.RemoveItemAsync("FoodSale");
+            head.CartHeadId = cartHeadId;
+            head.CartNo = Guid.NewGuid();
+            head.TotalAmount = lstFood.Select(x => x.FoodPrice).Sum();
+            head.HeadDate = DateTime.Now;
+            // await SetCartHead(headModel);
+            // await _localStorageService.RemoveItemAsync("FoodSale");
         }
+
+        model.Head = head;
+        model.Details = details;
+        
+        return model;
     }
 }

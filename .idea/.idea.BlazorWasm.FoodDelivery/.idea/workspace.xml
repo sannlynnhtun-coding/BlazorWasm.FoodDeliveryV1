@@ -8,13 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="-">
-      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/MenuStateContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor.cs" afterDir="false" />
+    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="Click Continue Shopping and Set Active to Home Page using state container">
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +22,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/slh/proj/BlazorWasm.FoodDelivery/BlazorWasm.FoodDelivery/Pages/Checkout/PageCheckout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/slh/proj/BlazorWasm.FoodDelivery/BlazorWasm.FoodDelivery/Shared/MainLayout.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -111,7 +108,7 @@
       <workItem from="1686196712565" duration="479000" />
       <workItem from="1686227917553" duration="612000" />
       <workItem from="1686234733101" duration="1315000" />
-      <workItem from="1686590965972" duration="2793000" />
+      <workItem from="1686590965972" duration="4959000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1686196730505</created>
@@ -155,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686591571843</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Click Continue Shopping and Set Active to Home Page using state container">
+      <created>1686594357025</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686594357025</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,26 +181,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="-SaleInProgress" />
     <MESSAGE value="-" />
-    <option name="LAST_COMMIT_MESSAGE" value="-" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BlazorWasm.FoodDelivery/Shared/MainLayout.razor.cs</url>
-          <line>8</line>
-          <properties documentPath="D:\slh\proj\BlazorWasm.FoodDelivery\BlazorWasm.FoodDelivery\Shared\MainLayout.razor.cs" initialLine="8" containingFunctionPresentation="Method 'OnInitialized'">
-            <startOffsets>
-              <option value="221" />
-            </startOffsets>
-            <endOffsets>
-              <option value="222" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Click Continue Shopping and Set Active to Home Page using state container" />
+    <option name="LAST_COMMIT_MESSAGE" value="Click Continue Shopping and Set Active to Home Page using state container" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

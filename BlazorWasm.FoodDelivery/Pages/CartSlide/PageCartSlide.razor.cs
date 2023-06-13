@@ -23,13 +23,13 @@ public partial class PageCartSlide
         VoucherStateContainer.Property = EnumCartType.Disable;
     }
 
-    async Task ItemIncreasement(FoodSaleDataModel item)
+    async Task AddItem(FoodSaleDataModel item)
     {
         await DbService.ItemIncrement(item);
         VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
     }
 
-    async Task ItemDecreasement(FoodSaleDataModel item)
+    async Task RemoveItem(FoodSaleDataModel item)
     {
         await DbService.ItemDecreasement(item);
         VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
@@ -41,7 +41,7 @@ public partial class PageCartSlide
             : "0";
     }
 
-    async Task RemoveItem(FoodSaleDataModel item)
+    async Task Remove(FoodSaleDataModel item)
     {
         await DbService.RemoveItem(item);
         VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
