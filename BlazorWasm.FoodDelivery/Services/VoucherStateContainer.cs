@@ -15,7 +15,7 @@ public class VoucherStateContainer
             NotifyStateChanged();
         }
     }
-    public List<FoodSaleDataModel> FoodLst
+    public List<FoodSaleDataModel> FoodList
     {
         get => saveFoodLst ?? new();
         set

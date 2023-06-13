@@ -25,7 +25,7 @@
     async Task OpenCart()
     {
         VoucherStateContainer.Property = EnumCartType.Enable;
-        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
+        VoucherStateContainer.FoodList = await DbService.GetFoodsList();
     }
 
 }

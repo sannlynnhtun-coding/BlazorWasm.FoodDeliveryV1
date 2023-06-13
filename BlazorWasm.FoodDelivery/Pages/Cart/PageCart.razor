@@ -3,7 +3,7 @@
 
 <section>
     <div class="container">
-    <h5 class="testimonial__subtitle mb-4">Cart</h5>
+        <h5 class="testimonial__subtitle mb-4">Cart</h5>
     </div>
     <div class="container">
         <div class="row">
@@ -13,80 +13,38 @@
                     <tr>
                         <th>Image</th>
                         <th>Product Title</th>
-                        <th>Price</th>
                         <th>Quantity</th>
+                        <th>Price</th>
                         <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="text-center cart__img-box">
-                            <img
-                                src="./Food ordering app -Cart_files/product_01.6be97a61.jpg"
-                                alt="">
-                        </td>
-                        <td class="text-center">Chicken Burger</td>
-                        <td class="text-center">$24</td>
-                        <td class="text-center">7px</td>
-                        <td class="text-center cart__item-del">
-                            <i
-                                class="ri-delete-bin-line">
-                            </i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center cart__img-box">
-                            <img
-                                src="./Food ordering app -Cart_files/product_2.1.f1538554.jpg"
-                                alt="">
-                        </td>
-                        <td class="text-center">Vegetarian Pizza</td>
-                        <td class="text-center">$115</td>
-                        <td class="text-center">2px</td>
-                        <td class="text-center cart__item-del">
-                            <i
-                                class="ri-delete-bin-line">
-                            </i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center cart__img-box">
-                            <img
-                                src="./Food ordering app -Cart_files/product_3.1.9c207cdf.jpg"
-                                alt="">
-                        </td>
-                        <td class="text-center">Double Cheese Margherita</td>
-                        <td class="text-center">$110</td>
-                        <td class="text-center">1px</td>
-                        <td class="text-center cart__item-del">
-                            <i
-                                class="ri-delete-bin-line">
-                            </i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center cart__img-box">
-                            <img
-                                src="./Food ordering app -Cart_files/product_4.1.3c8ecc49.jpg"
-                                alt="">
-                        </td>
-                        <td class="text-center">Maxican Green Wave</td>
-                        <td class="text-center">$110</td>
-                        <td class="text-center">1px</td>
-                        <td class="text-center cart__item-del">
-                            <i
-                                class="ri-delete-bin-line">
-                            </i>
-                        </td>
-                    </tr>
+                    @foreach (var item in FoodList)
+                    {
+                        <tr>
+                            <td class="text-center cart__img-box">
+                                <img
+                                    src="@item.FoodPhoto"
+                                    alt="">
+                            </td>
+                            <td class="text-center">@item.FoodName</td>
+                            <td class="text-center">$@item.FoodPrice</td>
+                            <td class="text-center">@item.Qty px</td>
+                            <td class="text-center cart__item-del">
+                                <i
+                                    class="ri-delete-bin-line">
+                                </i>
+                            </td>
+                        </tr>
+                    }
                     </tbody>
                 </table>
                 <div class="mt-4">
-                    <h6>Subtotal: $<span class="cart__subtotal">618</span></h6>
-                    <p>Taxes and shipping will calculate at checkout</p>
+                    <h6>Subtotal: $<span class="cart__subtotal">@(FoodList.Select((x => x.FoodPrice)).Sum())</span></h6>
+                    @* <p>Taxes and shipping will calculate at checkout</p> *@
                     <div class="cart__page-btn">
                         <button class="addTOCart__btn me-4" @onclick="GoToPage">
-                        Continue Shopping
+                            Continue Shopping
                             @* <NavLink *@
                             @*     href=""> *@
                             @*     Continue *@
@@ -106,12 +64,3 @@
         </div>
     </div>
 </section>
-
-@code {
-
-    void GoToPage()
-    {
-        _menuStateContainer.PageType = EnumPageType.Home;
-        NavigationManager.NavigateTo("");
-    }
-}
