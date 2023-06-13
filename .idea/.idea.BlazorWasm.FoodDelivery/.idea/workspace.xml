@@ -8,19 +8,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="Add ReceiptResponseModel">
-      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor.cs" afterDir="false" />
+    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/fonts/remixicon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/fonts/slick.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/fonts/slick.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Checkout/PageCheckout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Checkout/PageCheckout.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Notification/PageNotification.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Notification/PageNotification.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/LocalStorageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/VoucherStateContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/VoucherStateContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/PopularFood/PagePopularFood.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/PopularFood/PagePopularFood.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/NotificationStateContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/NotificationStateContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/receipt/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/receipt/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/receipt/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +120,8 @@
       <workItem from="1686196712565" duration="479000" />
       <workItem from="1686227917553" duration="612000" />
       <workItem from="1686234733101" duration="1315000" />
-      <workItem from="1686590965972" duration="14710000" />
+      <workItem from="1686590965972" duration="16658000" />
+      <workItem from="1686645958090" duration="1377000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1686196730505</created>
@@ -176,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686629387453</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Checkout - Inprogress">
+      <created>1686644080169</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686644080169</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +210,8 @@
     <MESSAGE value="-" />
     <MESSAGE value="Click Continue Shopping and Set Active to Home Page using state container" />
     <MESSAGE value="Add ReceiptResponseModel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ReceiptResponseModel" />
+    <MESSAGE value="Checkout - Inprogress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkout - Inprogress" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

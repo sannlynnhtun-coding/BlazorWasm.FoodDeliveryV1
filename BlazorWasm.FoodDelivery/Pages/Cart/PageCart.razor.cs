@@ -13,7 +13,7 @@ public partial class PageCart
 
     void GoToPage()
     {
-        _menuStateContainer.PageType = EnumPageType.Home;
+        _MenuStateContainer.PageType = EnumPageType.Home;
         NavigationManager.NavigateTo("");
     }
 }

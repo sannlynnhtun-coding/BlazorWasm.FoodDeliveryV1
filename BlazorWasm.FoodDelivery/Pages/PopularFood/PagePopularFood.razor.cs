@@ -36,7 +36,7 @@ public partial class PagePopularFood
         };
         await DbService.SetFoods(model);
         var result = await DbService.GetFoodsList();
-        StateContainer.Property = result.Select(x=> x.Qty).Sum().ToString();
+        StateContainer.Count = result.Select(x=> x.Qty).Sum().ToString();
         model = new();
     }
 

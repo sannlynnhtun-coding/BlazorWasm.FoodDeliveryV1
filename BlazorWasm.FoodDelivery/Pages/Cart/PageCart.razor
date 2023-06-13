@@ -1,5 +1,5 @@
 @page "/cart"
-@inject MenuStateContainer _menuStateContainer
+@inject MenuStateContainer _MenuStateContainer
 
 <section>
     <div class="container">
@@ -51,13 +51,16 @@
                             @*     Shopping *@
                             @* </NavLink> *@
                         </button>
-                        <button class="addTOCart__btn">
-                            <NavLink
-                                href="checkout">
-                                Proceed
-                                to checkout
-                            </NavLink>
-                        </button>
+                        @if (FoodList.Count > 0)
+                        {
+                            <button class="addTOCart__btn">
+                                <NavLink
+                                    href="checkout">
+                                    Proceed
+                                    to checkout
+                                </NavLink>
+                            </button>
+                        }
                     </div>
                 </div>
             </div>
