@@ -30,17 +30,17 @@
                                     </p>
                                     <div class=" d-flex align-items-center justify-content-between increase__decrease-btn">
                                         <span class="decrease__btn">
-                                            <i class="ri-subtract-line" @onclick="() => ItemDecreasement(item)"></i>
+                                            <i class="ri-subtract-line" @onclick="() => RemoveItem(item)"></i>
                                         </span>
                                         <span class=" quantity">
                                             @item.Qty
                                         </span>
                                         <span class="increase__btn">
-                                            <i class="ri-add-line" @onclick="() => ItemIncreasement(item)"></i>
+                                            <i class="ri-add-line" @onclick="() => AddItem(item)"></i>
                                         </span>
                                     </div>
                                 </div>
-                                <button class="delete__btn" type="button" @onclick="() => RemoveItem(item)">
+                                <button class="delete__btn" type="button" @onclick="() => Remove(item)">
                                     <i class="ri-delete-bin-line"></i>
                                 </button>
                             </div>

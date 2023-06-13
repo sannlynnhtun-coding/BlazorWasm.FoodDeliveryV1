@@ -9,5 +9,5 @@ public interface IDbService
     Task ItemIncrement(FoodSaleDataModel item);
     Task ItemDecreasement(FoodSaleDataModel item);
     Task RemoveItem(FoodSaleDataModel item);
-    Task CheckOut();
+    Task<ReceiptResponseModel> CheckOut();
 }

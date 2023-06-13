@@ -7,3 +7,9 @@ public class CartHeadDataModel
     public decimal TotalAmount { get; set; }
     public DateTime HeadDate { get; set; }
 }
+
+public class ReceiptResponseModel
+{
+    public CartHeadDataModel Head { get; set; }
+    public List<CartDetailDataModel> Details { get; set; }
+}
