@@ -8,22 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/fonts/remixicon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/fonts/slick.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/fonts/slick.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorWasm.FoodDelivery/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Cart/PageCart.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/CartSlide/PageCartSlide.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Checkout/PageCheckout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Checkout/PageCheckout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Notification/PageNotification.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/Notification/PageNotification.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/PopularFood/PagePopularFood.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Pages/PopularFood/PagePopularFood.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/NotificationStateContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/Services/NotificationStateContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/assets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasm.FoodDelivery/wwwroot/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="a59e1abb-bf88-4983-9bf6-70ef477c3068" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +106,7 @@
       <workItem from="1686227917553" duration="612000" />
       <workItem from="1686234733101" duration="1315000" />
       <workItem from="1686590965972" duration="16658000" />
-      <workItem from="1686645958090" duration="1377000" />
+      <workItem from="1686645958090" duration="2314000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1686196730505</created>
@@ -186,7 +171,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686644080169</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update Notification Count when checkout">
+      <created>1686647426599</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686647426599</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add new files">
+      <created>1686647505054</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686647505054</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add logo file">
+      <created>1686647583297</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686647583297</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +217,10 @@
     <MESSAGE value="Click Continue Shopping and Set Active to Home Page using state container" />
     <MESSAGE value="Add ReceiptResponseModel" />
     <MESSAGE value="Checkout - Inprogress" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checkout - Inprogress" />
+    <MESSAGE value="Update Notification Count when checkout" />
+    <MESSAGE value="add new files" />
+    <MESSAGE value="add logo file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add logo file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
