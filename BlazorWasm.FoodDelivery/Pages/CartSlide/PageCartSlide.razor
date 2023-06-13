@@ -3,11 +3,10 @@
 @inject NotificationStateContainer StateContainer
 
 @if (VoucherStateContainer.Property == EnumCartType.Enable && 
-     VoucherStateContainer.FoodLst != null &&
-     VoucherStateContainer.FoodLst.Count > 0)
+     VoucherStateContainer.FoodList.Count > 0)
 {
     {
-        LstFood = VoucherStateContainer.FoodLst;
+        FoodList = VoucherStateContainer.FoodList;
     }
     <div class="cart__container">
         <ul class="cart list-group">
@@ -17,7 +16,7 @@
                 </span>
             </div>
             <div class="cart__item-list">
-                @foreach (var item in LstFood)
+                @foreach (var item in FoodList)
                 {
                     <li class="border-0 cart__item list-group-item">
                         <div class="cart__item-info d-flex gap-2">
@@ -49,7 +48,7 @@
                 }
             </div>
             <div class="cart__bottom d-flex align-items-center justify-content-between">
-                <h6>TotalAmount : <span>$@(LstFood.Select((x => x.FoodPrice)).Sum())</span></h6>
+                <h6>TotalAmount : <span>$@(FoodList.Select((x => x.FoodPrice)).Sum())</span></h6>
                 <button @onclick="Checkout">
                         Checkout
                 </button>

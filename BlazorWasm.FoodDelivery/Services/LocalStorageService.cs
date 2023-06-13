@@ -66,7 +66,7 @@ public class LocalStorageService : IDbService
         var existFood = lst.FirstOrDefault(x => x.FoodName == item.FoodName);
         var index = lst.FindIndex(x => x.FoodName == item.FoodName);
         existFood.Qty -= 1;
-        if(existFood.Qty != 0)
+        if (existFood.Qty != 0)
         {
             existFood.FoodPrice = item.FoodPrice * existFood.Qty;
             lst[index] = existFood;
@@ -122,10 +122,10 @@ public class LocalStorageService : IDbService
     {
         ReceiptResponseModel model = new ReceiptResponseModel();
         Guid cartHeadId = Guid.NewGuid();
-        
+
         CartHeadDataModel head = new();
         List<CartDetailDataModel> details = new();
-        
+
         var lstFood = await GetFoodsList();
         if (lstFood != null && lstFood.Count() > 0)
         {
@@ -147,12 +147,12 @@ public class LocalStorageService : IDbService
             head.TotalAmount = lstFood.Select(x => x.FoodPrice).Sum();
             head.HeadDate = DateTime.Now;
             // await SetCartHead(headModel);
-            // await _localStorageService.RemoveItemAsync("FoodSale");
+            await _localStorageService.RemoveItemAsync("FoodSale");
         }
 
         model.Head = head;
         model.Details = details;
-        
+
         return model;
     }
 }

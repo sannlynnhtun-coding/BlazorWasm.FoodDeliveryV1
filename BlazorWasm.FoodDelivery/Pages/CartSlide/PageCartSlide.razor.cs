@@ -4,11 +4,11 @@ namespace BlazorWasm.FoodDelivery.Pages.CartSlide;
 
 public partial class PageCartSlide
 {
-    private List<FoodSaleDataModel> LstFood { get; set; } = new();
+    private List<FoodSaleDataModel> FoodList { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
-        LstFood = await DbService.GetFoodsList();
+        FoodList = await DbService.GetFoodsList();
         VoucherStateContainer.OnChange += StateHasChanged;
     }
 
@@ -19,22 +19,22 @@ public partial class PageCartSlide
 
     async Task Close()
     {
-        LstFood = await DbService.GetFoodsList();
+        FoodList = await DbService.GetFoodsList();
         VoucherStateContainer.Property = EnumCartType.Disable;
     }
 
     async Task AddItem(FoodSaleDataModel item)
     {
         await DbService.ItemIncrement(item);
-        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
+        VoucherStateContainer.FoodList = await DbService.GetFoodsList();
     }
 
     async Task RemoveItem(FoodSaleDataModel item)
     {
         await DbService.ItemDecreasement(item);
-        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
-        StateContainer.Property = VoucherStateContainer.FoodLst != null
-            ? VoucherStateContainer.FoodLst
+        VoucherStateContainer.FoodList = await DbService.GetFoodsList();
+        StateContainer.Property = VoucherStateContainer.FoodList != null
+            ? VoucherStateContainer.FoodList
                 .Select(x => x.Qty)
                 .Sum()
                 .ToString()
@@ -44,9 +44,9 @@ public partial class PageCartSlide
     async Task Remove(FoodSaleDataModel item)
     {
         await DbService.RemoveItem(item);
-        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
-        StateContainer.Property = VoucherStateContainer.FoodLst != null
-            ? VoucherStateContainer.FoodLst
+        VoucherStateContainer.FoodList = await DbService.GetFoodsList();
+        StateContainer.Property = VoucherStateContainer.FoodList != null
+            ? VoucherStateContainer.FoodList
                 .Select(x => x.Qty)
                 .Sum()
                 .ToString()
@@ -55,10 +55,9 @@ public partial class PageCartSlide
 
     async Task Checkout()
     {
-        await DbService.CheckOut();
-        VoucherStateContainer.FoodLst = await DbService.GetFoodsList();
-        StateContainer.Property = VoucherStateContainer.FoodLst != null
-            ? VoucherStateContainer.FoodLst
+        VoucherStateContainer.FoodList = await DbService.GetFoodsList();
+        StateContainer.Property = VoucherStateContainer.FoodList != null
+            ? VoucherStateContainer.FoodList
                 .Select(x => x.Qty)
                 .Sum()
                 .ToString()

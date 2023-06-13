@@ -7,13 +7,13 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.container {
+.receipt_container {
     display: block;
     width: 100%;
     background: #fff;
     max-width: 350px;
     padding: 25px;
-    margin: 50px auto 0;
+    margin: 50px auto;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
