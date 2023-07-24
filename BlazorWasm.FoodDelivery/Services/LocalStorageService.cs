@@ -54,9 +54,42 @@ public class LocalStorageService : IDbService
         var lst = await GetFoodsList();
         var existFood = lst.FirstOrDefault(x => x.FoodName == item.FoodName);
         existFood.Qty += 1;
-        existFood.FoodPrice = item.FoodPrice * existFood.Qty;
+        existFood.FoodPrice = item.Price * existFood.Qty;
         var index = lst.FindIndex(x => x.FoodName == item.FoodName);
         lst[index] = existFood;
+        await _localStorageService.SetItemAsync("FoodSale", lst);
+    }
+
+    public async Task ItemIncrement(FoodModel item)
+    {
+        var lst = await GetFoodsList();
+        var existFood = lst.FirstOrDefault(x => x.FoodName == item.FoodName);
+        if (existFood is null)
+        {
+            existFood = new FoodSaleDataModel()
+            {
+                Price = item.FoodPrice,
+                Qty = 1,
+                FoodName = item.FoodName,
+                FoodPhoto = $"assets/img/food/{item.FoodId}.jpg",
+            };
+        }
+        else
+        {
+            existFood.Qty += 1;
+        }
+
+        existFood.FoodPrice = existFood.Price * existFood.Qty;
+        var index = lst.FindIndex(x => x.FoodName == item.FoodName);
+        if (index == -1)
+        {
+            lst.Add(existFood);
+        }
+        else
+        {
+            lst[index] = existFood;
+        }
+
         await _localStorageService.SetItemAsync("FoodSale", lst);
     }
 
@@ -68,7 +101,7 @@ public class LocalStorageService : IDbService
         existFood.Qty -= 1;
         if (existFood.Qty != 0)
         {
-            existFood.FoodPrice = item.FoodPrice * existFood.Qty;
+            existFood.FoodPrice = item.Price * existFood.Qty;
             lst[index] = existFood;
             await _localStorageService.SetItemAsync("FoodSale", lst);
         }

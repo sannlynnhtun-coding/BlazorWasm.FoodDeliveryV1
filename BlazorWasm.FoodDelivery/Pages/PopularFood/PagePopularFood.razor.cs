@@ -26,18 +26,22 @@ public partial class PagePopularFood
 
     async Task AddToCard(FoodModel item)
     {
-        FoodSaleDataModel model = new()
-        {
-            SaleId = Guid.NewGuid(),
-            FoodName = item.FoodName,
-            FoodPrice = item.FoodPrice,
-            FoodPhoto = $"assets/img/food/{item.FoodId}.jpg",
-            Qty = 1
-        };
-        await DbService.SetFoods(model);
+        // FoodSaleDataModel model = new()
+        // {
+        //     SaleId = Guid.NewGuid(),
+        //     FoodName = item.FoodName,
+        //     Price = item.FoodPrice,
+        //     FoodPhoto = $"assets/img/food/{item.FoodId}.jpg",
+        //     Qty = 1
+        // };
+        // await DbService.SetFoods(model);
+        // var result = await DbService.GetFoodsList();
+        // StateContainer.Count = result.Select(x=> x.Qty).Sum().ToString();
+        // model = new();
+        
+        await DbService.ItemIncrement(item);
         var result = await DbService.GetFoodsList();
         StateContainer.Count = result.Select(x=> x.Qty).Sum().ToString();
-        model = new();
     }
 
     void Search(ChangeEventArgs e)
