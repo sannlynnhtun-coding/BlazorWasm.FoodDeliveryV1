@@ -25,7 +25,9 @@
                                 <div>
                                     <h6 class="cart__product-title">@item.FoodName</h6>
                                     <p class=" d-flex align-items-center gap-5 cart__product-price">
-                                        <span>@(item.FoodPrice)$</span>
+                                        <span>
+                                            @item.Price * @item.Qty = @(item.FoodPrice)
+                                        </span>
                                     </p>
                                     <div class=" d-flex align-items-center justify-content-between increase__decrease-btn">
                                         <span class="decrease__btn">

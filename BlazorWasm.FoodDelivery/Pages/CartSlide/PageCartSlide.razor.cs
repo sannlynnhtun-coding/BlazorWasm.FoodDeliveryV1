@@ -33,7 +33,7 @@ public partial class PageCartSlide
     {
         await DbService.ItemDecreasement(item);
         VoucherStateContainer.FoodList = await DbService.GetFoodsList();
-        StateContainer.Property = VoucherStateContainer.FoodList != null
+        StateContainer.Count = VoucherStateContainer.FoodList != null
             ? VoucherStateContainer.FoodList
                 .Select(x => x.Qty)
                 .Sum()
@@ -45,7 +45,7 @@ public partial class PageCartSlide
     {
         await DbService.RemoveItem(item);
         VoucherStateContainer.FoodList = await DbService.GetFoodsList();
-        StateContainer.Property = VoucherStateContainer.FoodList != null
+        StateContainer.Count = VoucherStateContainer.FoodList != null
             ? VoucherStateContainer.FoodList
                 .Select(x => x.Qty)
                 .Sum()
@@ -56,7 +56,7 @@ public partial class PageCartSlide
     async Task Checkout()
     {
         VoucherStateContainer.FoodList = await DbService.GetFoodsList();
-        StateContainer.Property = VoucherStateContainer.FoodList != null
+        StateContainer.Count = VoucherStateContainer.FoodList != null
             ? VoucherStateContainer.FoodList
                 .Select(x => x.Qty)
                 .Sum()

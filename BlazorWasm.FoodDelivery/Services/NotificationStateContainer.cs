@@ -2,14 +2,14 @@
 {
     public class NotificationStateContainer
     {
-        private string? _enable;
+        private string? _count;
 
-        public string Property
+        public string Count
         {
-            get => _enable ?? "0";
+            get => _count ?? "0";
             set
             {
-                _enable = value;
+                _count = value;
                 NotifyStateChanged();
             }
         }

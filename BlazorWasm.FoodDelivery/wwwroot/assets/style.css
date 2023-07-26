@@ -20901,8 +20901,8 @@ textarea.form-control-lg {
     font-family: "slick";
     font-weight: 400;
     font-style: normal;
-    src: url(/static/media/slick.a4e97f5a.eot);
-    src: url(/static/media/slick.a4e97f5a.eot?#iefix) format("embedded-opentype"), url(/static/media/slick.29518378.woff) format("woff"), url(/static/media/slick.c94f7671.ttf) format("truetype"), url(/static/media/slick.2630a3e3.svg#slick) format("svg")
+    src: url(assets/fonts/slick.eot);
+    src: url(assets/fonts/slick.eot?#iefix) format("embedded-opentype"), url(assets/fonts/slick.woff) format("woff"), url(assets/fonts/slick.ttf) format("truetype"), url(assets/fonts/slick.svg#slick) format("svg")
 }
 
 .slick-next, .slick-prev {

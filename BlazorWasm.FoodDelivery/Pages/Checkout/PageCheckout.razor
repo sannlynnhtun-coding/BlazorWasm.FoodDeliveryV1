@@ -1,82 +1,82 @@
 @page "/checkout"
+@implements IDisposable
+@inject VoucherStateContainer _VoucherStateContainer
+@inject NotificationStateContainer _NotificationStateContainer
+@inject MenuStateContainer _MenuStateContainer
 
-<div class="receipt_container">
-
-    <div class="receipt_header">
-        <h1>Receipt of Sale <span>Tasty Treat</span></h1>
-        <h2>Address: Lorem Ipsum, 1234-5 <span>Tel: +1 012 345 67 89</span></h2>
-    </div>
-
-    <div class="receipt_body">
-
-        <div class="date_time_con">
-            <div class="date">@DateTime.Now.ToString("dd/MMM/yyyy")</div>
-            <div class="time">@DateTime.Now.ToString("h:mm:ss tt")</div>
+<link href="receipt/style.css" rel="stylesheet">
+@if (FoodList.Count > 0)
+{
+    <div class="receipt_container">
+        <div class="receipt_header">
+            <h1>Receipt of Sale <span>Tasty Treat</span></h1>
+            <h2>Address: Lorem Ipsum, 1234-5 <span>Tel: +1 012 345 67 89</span></h2>
         </div>
-
-        <div class="items">
-            <table>
-
-                <thead>
-                <th>NO.</th>
-                <th>ITEM</th>
-                <th>QTY</th>
-                <th>AMT</th>
-                </thead>
-
-                <tbody>
-                @{
-                    decimal totalAmount = FoodList.Select(x => x.FoodPrice).Sum();
-                    int num = Convert.ToInt32(totalAmount.ToString().Substring(0, 1));
-                    decimal change = Convert.ToDecimal((num + 1).ToString() + "".PadLeft(totalAmount.ToString().Length - 1, '0'));
-                    int count = 0;
-                }
-                @foreach (var item in FoodList)
-                {
+        <div class="receipt_body">
+            <div class="date_time_con">
+                <div class="date">@DateTime.Now.ToString("dd/MMM/yyyy")</div>
+                <div class="time">@DateTime.Now.ToString("h:mm:ss tt")</div>
+            </div>
+            <div class="items">
+                <table>
+                    <thead>
                     <tr>
-                        <td>@(++count)</td>
-                        <td>@item.FoodName</td>
-                        <td>@item.Qty</td>
-                        <td>@item.FoodPrice</td>
+                        <th>NO.</th>
+                        <th>ITEM</th>
+                        <th>QTY</th>
+                        <th>AMT</th>
                     </tr>
-                }
-                </tbody>
-
-                <tfoot>
-                <tr>
-                    <td>Total</td>
-                    <td></td>
-                    <td>@totalAmount</td>
-                </tr>
-
-                <tr>
-                    <td>Cash</td>
-                    <td></td>
-                    <td>@totalAmount</td>
-                </tr>
-
-                <tr>
-                    <td>Change</td>
-                    <td></td>
-                    <td>@(change - totalAmount)</td>
-                </tr>
-                </tfoot>
-
-            </table>
+                    </thead>
+                    <tbody>
+                    @{
+                        decimal totalAmount = FoodList.Select(x => x.FoodPrice).Sum();
+                        int num = Convert.ToInt32(totalAmount.ToString().Substring(0, 1));
+                        decimal change = Convert.ToDecimal((num + 1).ToString() + "".PadLeft(totalAmount.ToString().Length - 1, '0'));
+                        int count = 0;
+                    }
+                    @foreach (var item in FoodList)
+                    {
+                        <tr>
+                            <td>@(++count)</td>
+                            <td>@item.FoodName</td>
+                            <td>@item.Qty</td>
+                            <td>@item.FoodPrice.ToString("n2")</td>
+                        </tr>
+                    }
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td></td>
+                        <td></td>
+                        <td>@totalAmount.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td>Cash</td>
+                        <td></td>
+                        <td></td>
+                        <td>@totalAmount.ToString("n2")</td>
+                    </tr>
+                    <tr>
+                        <td>Change</td>
+                        <td></td>
+                        <td></td>
+                        <td>@((change - totalAmount).ToString("n2"))</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
-
+        <h3>Thank You!</h3>
     </div>
-
-
-    <h3>Thank You!</h3>
-
-</div>
+}
 
 @code{
     private List<FoodSaleDataModel> FoodList { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
+        _VoucherStateContainer.OnChange += StateHasChanged;
         FoodList = await DbService.GetFoodsList();
     }
 
@@ -87,10 +87,19 @@
             var result = await DbService.GetFoodsList();
             if (result.Count == 0)
             {
+                _MenuStateContainer.PageType = EnumPageType.Home;
                 NavigationManager.NavigateTo("/");
             }
+
             await DbService.CheckOut();
+            _NotificationStateContainer.Count = "0";
+            _VoucherStateContainer.FoodList = await DbService.GetFoodsList();
         }
+    }
+
+    public void Dispose()
+    {
+        _VoucherStateContainer.OnChange -= StateHasChanged;
     }
 
 }
